@@ -1,0 +1,11 @@
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\JangadaTileServer.exe.config
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\JangadaTileServer.exe
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\JangadaTileServer.pdb
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Alchemy.dll
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Google.ProtocolBuffers.dll
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Google.ProtocolBuffers.Serialization.dll
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Google.ProtocolBuffers.xml
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Google.ProtocolBuffers.Serialization.xml
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.csprojResolveAssemblyReference.cache
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.exe
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.pdb
