@@ -12,7 +12,7 @@ namespace JangadaTileServer.Content.Creatures
     {
         public int CreatureId { get; set; }
         public Guid CreatureGuid { get; set; }
-        public Position Position { get; set; }
+        public Utils.Position Position { get; set; }
         public int Direction { get; set; }
         public Area Area { get; set; }
         public Stats Stats { get; set; }

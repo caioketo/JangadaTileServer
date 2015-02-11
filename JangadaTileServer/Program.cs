@@ -1,6 +1,6 @@
 ﻿using Alchemy;
 using Alchemy.Classes;
-using Jangada;
+using Proto;
 using JangadaTileServer.Network;
 using System;
 using System.Collections.Concurrent;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using JangadaTileServer.Content;
 
 namespace JangadaTileServer
 {
@@ -19,6 +20,7 @@ namespace JangadaTileServer
 
         static void Main(string[] args)
         {
+            Game.GetInstance();
             var aServer = new WebSocketServer(81, IPAddress.Any)
             {
                 OnReceive = OnReceive,

@@ -89,30 +89,32 @@ namespace Proto {
           "ZXF1ZXN0TW92ZW1lbnRQYWNrZXQSOQoMbW92ZW1lbnRUeXBlGAEgAigOMiMu" + 
           "UmVxdWVzdE1vdmVtZW50UGFja2V0Lk1vdmVtZW50VHlwZSI+CgxNb3ZlbWVu" + 
           "dFR5cGUSCwoHRk9SV0FSRBABEgwKCEJBQ0tXQVJEEAISCAoETEVGVBADEgkK" + 
-          "BVJJR0hUEAQi+QEKFUFyZWFEZXNjcmlwdGlvblBhY2tldBIOCgZhcmVhSWQY" + 
-          "ASACKAUSDQoFd2lkdGgYAiACKAUSDgoGaGVpZ2h0GAMgAigFEg4KBnN0YXJ0" + 
-          "WBgEIAIoBRIOCgZzdGFydFkYBSACKAUSHwoFdGlsZXMYBiADKAsyEC5UaWxl" + 
-          "RGVzY3JpcHRpb24SIgoGcGxheWVyGAcgAigLMhIuUGxheWVyRGVzY3JpcHRp" + 
-          "b24SIwoHcGxheWVycxgIIAMoCzISLlBsYXllckRlc2NyaXB0aW9uEicKCWNy" + 
-          "ZWF0dXJlcxgJIAMoCzIULkNyZWF0dXJlRGVzY3JpcHRpb24iMgoPVGlsZURl" + 
-          "c2NyaXB0aW9uEhAKCGdyb3VuZElkGAEgAigFEg0KBWl0ZW1zGAIgAygFIkoK" + 
-          "FUNyZWF0dXJlUmVzcGF3blBhY2tldBIxChNjcmVhdHVyZURlc2NyaXB0aW9u" + 
-          "GAEgAigLMhQuQ3JlYXR1cmVEZXNjcmlwdGlvbiJgChNDcmVhdHVyZURlc2Ny" + 
-          "aXB0aW9uEhQKDGNyZWF0dXJlR3VpZBgBIAIoCRIOCgZ0ZXh0SWQYAiACKAUS" + 
-          "IwoQY3JlYXR1cmVQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9uIkoKEVBsYXll" + 
-          "ckRlc2NyaXB0aW9uEhIKCnBsYXllckd1aWQYASACKAkSIQoOcGxheWVyUG9z" + 
-          "aXRpb24YAiACKAsyCS5Qb3NpdGlvbiJsChBTdGF0c0Rlc2NyaXB0aW9uEgwK" + 
-          "BENPTlMYASACKAUSCwoDU1RSGAIgAigFEgsKA0lOVBgDIAIoBRILCgNXSVMY" + 
-          "BCACKAUSCwoDREVYGAUgAigFEgoKAkhQGAYgAigFEgoKAk1QGAcgAigFImoK" + 
-          "EVNraWxsc0Rlc2NyaXB0aW9uEgwKBE5hbWUYASACKAkSEQoJVGV4dHVyZUlk" + 
-          "GAIgAigFEhAKCENvb2xEb3duGAMgAigCEhAKCERpc3RhbmNlGAQgAigCEhAK" + 
-          "CEF1dG9DYXN0GAUgAigIIjcKEVBsYXllckxvZ2luUGFja2V0EiIKBnBsYXll" + 
-          "chgBIAIoCzISLlBsYXllckRlc2NyaXB0aW9uIjYKFFBsYXllck1vdmVtZW50" + 
-          "UGFja2V0Eh4KC25ld1Bvc2l0aW9uGAEgAigLMgkuUG9zaXRpb24iPQoXQ2hh" + 
-          "cmFjdGVyTW92ZW1lbnRQYWNrZXQSIgoGcGxheWVyGAEgAigLMhIuUGxheWVy" + 
-          "RGVzY3JpcHRpb24iMwoITWVzc2FnZXMSJwoOTmV0d29ya21lc3NhZ2UYASAD" + 
-          "KAsyDy5OZXR3b3JrbWVzc2FnZSIoChJQbGF5ZXJMb2dvdXRQYWNrZXQSEgoK" + 
-          "cGxheWVyR3VpZBgBIAIoCQ==");
+          "BVJJR0hUEAQi2QEKFUFyZWFEZXNjcmlwdGlvblBhY2tldBIOCgZhcmVhSWQY" + 
+          "ASACKAUSDQoFd2lkdGgYAiACKAUSDgoGaGVpZ2h0GAMgAigFEh8KBXRpbGVz" + 
+          "GAQgAygLMhAuVGlsZURlc2NyaXB0aW9uEiIKBnBsYXllchgFIAIoCzISLlBs" + 
+          "YXllckRlc2NyaXB0aW9uEiMKB3BsYXllcnMYBiADKAsyEi5QbGF5ZXJEZXNj" + 
+          "cmlwdGlvbhInCgljcmVhdHVyZXMYByADKAsyFC5DcmVhdHVyZURlc2NyaXB0" + 
+          "aW9uIjIKD1RpbGVEZXNjcmlwdGlvbhIQCghncm91bmRJZBgBIAIoBRINCgVp" + 
+          "dGVtcxgCIAMoBSJKChVDcmVhdHVyZVJlc3Bhd25QYWNrZXQSMQoTY3JlYXR1" + 
+          "cmVEZXNjcmlwdGlvbhgBIAIoCzIULkNyZWF0dXJlRGVzY3JpcHRpb24ipwEK" + 
+          "E0NyZWF0dXJlRGVzY3JpcHRpb24SFAoMY3JlYXR1cmVHdWlkGAEgAigJEg8K" + 
+          "B21vZGVsSWQYAiACKAUSIwoQY3JlYXR1cmVQb3NpdGlvbhgDIAIoCzIJLlBv" + 
+          "c2l0aW9uEiAKBXN0YXRzGAQgAigLMhEuU3RhdHNEZXNjcmlwdGlvbhIiCgZz" + 
+          "a2lsbHMYBSADKAsyEi5Ta2lsbHNEZXNjcmlwdGlvbiKQAQoRUGxheWVyRGVz" + 
+          "Y3JpcHRpb24SEgoKcGxheWVyR3VpZBgBIAIoCRIhCg5wbGF5ZXJQb3NpdGlv" + 
+          "bhgCIAIoCzIJLlBvc2l0aW9uEiAKBXN0YXRzGAMgAigLMhEuU3RhdHNEZXNj" + 
+          "cmlwdGlvbhIiCgZza2lsbHMYBCADKAsyEi5Ta2lsbHNEZXNjcmlwdGlvbiJs" + 
+          "ChBTdGF0c0Rlc2NyaXB0aW9uEgwKBENPTlMYASACKAUSCwoDU1RSGAIgAigF" + 
+          "EgsKA0lOVBgDIAIoBRILCgNXSVMYBCACKAUSCwoDREVYGAUgAigFEgoKAkhQ" + 
+          "GAYgAigFEgoKAk1QGAcgAigFImoKEVNraWxsc0Rlc2NyaXB0aW9uEgwKBE5h" + 
+          "bWUYASACKAkSEQoJVGV4dHVyZUlkGAIgAigFEhAKCENvb2xEb3duGAMgAigC" + 
+          "EhAKCERpc3RhbmNlGAQgAigCEhAKCEF1dG9DYXN0GAUgAigIIjcKEVBsYXll" + 
+          "ckxvZ2luUGFja2V0EiIKBnBsYXllchgBIAIoCzISLlBsYXllckRlc2NyaXB0" + 
+          "aW9uIjYKFFBsYXllck1vdmVtZW50UGFja2V0Eh4KC25ld1Bvc2l0aW9uGAEg" + 
+          "AigLMgkuUG9zaXRpb24iPQoXQ2hhcmFjdGVyTW92ZW1lbnRQYWNrZXQSIgoG" + 
+          "cGxheWVyGAEgAigLMhIuUGxheWVyRGVzY3JpcHRpb24iMwoITWVzc2FnZXMS" + 
+          "JwoOTmV0d29ya21lc3NhZ2UYASADKAsyDy5OZXR3b3JrbWVzc2FnZSIoChJQ" + 
+          "bGF5ZXJMb2dvdXRQYWNrZXQSEgoKcGxheWVyR3VpZBgBIAIoCQ==");
       pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
         descriptor = root;
         internal__static_Networkmessage__Descriptor = Descriptor.MessageTypes[0];
@@ -146,7 +148,7 @@ namespace Proto {
         internal__static_AreaDescriptionPacket__Descriptor = Descriptor.MessageTypes[7];
         internal__static_AreaDescriptionPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::AreaDescriptionPacket, global::AreaDescriptionPacket.Builder>(internal__static_AreaDescriptionPacket__Descriptor,
-                new string[] { "AreaId", "Width", "Height", "StartX", "StartY", "Tiles", "Player", "Players", "Creatures", });
+                new string[] { "AreaId", "Width", "Height", "Tiles", "Player", "Players", "Creatures", });
         internal__static_TileDescription__Descriptor = Descriptor.MessageTypes[8];
         internal__static_TileDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::TileDescription, global::TileDescription.Builder>(internal__static_TileDescription__Descriptor,
@@ -158,11 +160,11 @@ namespace Proto {
         internal__static_CreatureDescription__Descriptor = Descriptor.MessageTypes[10];
         internal__static_CreatureDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::CreatureDescription, global::CreatureDescription.Builder>(internal__static_CreatureDescription__Descriptor,
-                new string[] { "CreatureGuid", "TextId", "CreaturePosition", });
+                new string[] { "CreatureGuid", "ModelId", "CreaturePosition", "Stats", "Skills", });
         internal__static_PlayerDescription__Descriptor = Descriptor.MessageTypes[11];
         internal__static_PlayerDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::PlayerDescription, global::PlayerDescription.Builder>(internal__static_PlayerDescription__Descriptor,
-                new string[] { "PlayerGuid", "PlayerPosition", });
+                new string[] { "PlayerGuid", "PlayerPosition", "Stats", "Skills", });
         internal__static_StatsDescription__Descriptor = Descriptor.MessageTypes[12];
         internal__static_StatsDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::StatsDescription, global::StatsDescription.Builder>(internal__static_StatsDescription__Descriptor,
@@ -3114,8 +3116,8 @@ public sealed partial class RequestMovementPacket : pb::GeneratedMessage<Request
 public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDescriptionPacket, AreaDescriptionPacket.Builder> {
   private AreaDescriptionPacket() { }
   private static readonly AreaDescriptionPacket defaultInstance = new AreaDescriptionPacket().MakeReadOnly();
-  private static readonly string[] _areaDescriptionPacketFieldNames = new string[] { "areaId", "creatures", "height", "player", "players", "startX", "startY", "tiles", "width" };
-  private static readonly uint[] _areaDescriptionPacketFieldTags = new uint[] { 8, 74, 24, 58, 66, 32, 40, 50, 16 };
+  private static readonly string[] _areaDescriptionPacketFieldNames = new string[] { "areaId", "creatures", "height", "player", "players", "tiles", "width" };
+  private static readonly uint[] _areaDescriptionPacketFieldTags = new uint[] { 8, 58, 24, 42, 50, 34, 16 };
   public static AreaDescriptionPacket DefaultInstance {
     get { return defaultInstance; }
   }
@@ -3166,27 +3168,7 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
     get { return height_; }
   }
   
-  public const int StartXFieldNumber = 4;
-  private bool hasStartX;
-  private int startX_;
-  public bool HasStartX {
-    get { return hasStartX; }
-  }
-  public int StartX {
-    get { return startX_; }
-  }
-  
-  public const int StartYFieldNumber = 5;
-  private bool hasStartY;
-  private int startY_;
-  public bool HasStartY {
-    get { return hasStartY; }
-  }
-  public int StartY {
-    get { return startY_; }
-  }
-  
-  public const int TilesFieldNumber = 6;
+  public const int TilesFieldNumber = 4;
   private pbc::PopsicleList<global::TileDescription> tiles_ = new pbc::PopsicleList<global::TileDescription>();
   public scg::IList<global::TileDescription> TilesList {
     get { return tiles_; }
@@ -3198,7 +3180,7 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
     return tiles_[index];
   }
   
-  public const int PlayerFieldNumber = 7;
+  public const int PlayerFieldNumber = 5;
   private bool hasPlayer;
   private global::PlayerDescription player_;
   public bool HasPlayer {
@@ -3208,7 +3190,7 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
     get { return player_ ?? global::PlayerDescription.DefaultInstance; }
   }
   
-  public const int PlayersFieldNumber = 8;
+  public const int PlayersFieldNumber = 6;
   private pbc::PopsicleList<global::PlayerDescription> players_ = new pbc::PopsicleList<global::PlayerDescription>();
   public scg::IList<global::PlayerDescription> PlayersList {
     get { return players_; }
@@ -3220,7 +3202,7 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
     return players_[index];
   }
   
-  public const int CreaturesFieldNumber = 9;
+  public const int CreaturesFieldNumber = 7;
   private pbc::PopsicleList<global::CreatureDescription> creatures_ = new pbc::PopsicleList<global::CreatureDescription>();
   public scg::IList<global::CreatureDescription> CreaturesList {
     get { return creatures_; }
@@ -3237,8 +3219,6 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
       if (!hasAreaId) return false;
       if (!hasWidth) return false;
       if (!hasHeight) return false;
-      if (!hasStartX) return false;
-      if (!hasStartY) return false;
       if (!hasPlayer) return false;
       foreach (global::TileDescription element in TilesList) {
         if (!element.IsInitialized) return false;
@@ -3261,28 +3241,22 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
       output.WriteInt32(1, field_names[0], AreaId);
     }
     if (hasWidth) {
-      output.WriteInt32(2, field_names[8], Width);
+      output.WriteInt32(2, field_names[6], Width);
     }
     if (hasHeight) {
       output.WriteInt32(3, field_names[2], Height);
     }
-    if (hasStartX) {
-      output.WriteInt32(4, field_names[5], StartX);
-    }
-    if (hasStartY) {
-      output.WriteInt32(5, field_names[6], StartY);
-    }
     if (tiles_.Count > 0) {
-      output.WriteMessageArray(6, field_names[7], tiles_);
+      output.WriteMessageArray(4, field_names[5], tiles_);
     }
     if (hasPlayer) {
-      output.WriteMessage(7, field_names[3], Player);
+      output.WriteMessage(5, field_names[3], Player);
     }
     if (players_.Count > 0) {
-      output.WriteMessageArray(8, field_names[4], players_);
+      output.WriteMessageArray(6, field_names[4], players_);
     }
     if (creatures_.Count > 0) {
-      output.WriteMessageArray(9, field_names[1], creatures_);
+      output.WriteMessageArray(7, field_names[1], creatures_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -3303,23 +3277,17 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
       if (hasHeight) {
         size += pb::CodedOutputStream.ComputeInt32Size(3, Height);
       }
-      if (hasStartX) {
-        size += pb::CodedOutputStream.ComputeInt32Size(4, StartX);
-      }
-      if (hasStartY) {
-        size += pb::CodedOutputStream.ComputeInt32Size(5, StartY);
-      }
       foreach (global::TileDescription element in TilesList) {
-        size += pb::CodedOutputStream.ComputeMessageSize(6, element);
+        size += pb::CodedOutputStream.ComputeMessageSize(4, element);
       }
       if (hasPlayer) {
-        size += pb::CodedOutputStream.ComputeMessageSize(7, Player);
+        size += pb::CodedOutputStream.ComputeMessageSize(5, Player);
       }
       foreach (global::PlayerDescription element in PlayersList) {
-        size += pb::CodedOutputStream.ComputeMessageSize(8, element);
+        size += pb::CodedOutputStream.ComputeMessageSize(6, element);
       }
       foreach (global::CreatureDescription element in CreaturesList) {
-        size += pb::CodedOutputStream.ComputeMessageSize(9, element);
+        size += pb::CodedOutputStream.ComputeMessageSize(7, element);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -3457,12 +3425,6 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
       if (other.HasHeight) {
         Height = other.Height;
       }
-      if (other.HasStartX) {
-        StartX = other.StartX;
-      }
-      if (other.HasStartY) {
-        StartY = other.StartY;
-      }
       if (other.tiles_.Count != 0) {
         result.tiles_.Add(other.tiles_);
       }
@@ -3530,19 +3492,11 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
             result.hasHeight = input.ReadInt32(ref result.height_);
             break;
           }
-          case 32: {
-            result.hasStartX = input.ReadInt32(ref result.startX_);
-            break;
-          }
-          case 40: {
-            result.hasStartY = input.ReadInt32(ref result.startY_);
-            break;
-          }
-          case 50: {
+          case 34: {
             input.ReadMessageArray(tag, field_name, result.tiles_, global::TileDescription.DefaultInstance, extensionRegistry);
             break;
           }
-          case 58: {
+          case 42: {
             global::PlayerDescription.Builder subBuilder = global::PlayerDescription.CreateBuilder();
             if (result.hasPlayer) {
               subBuilder.MergeFrom(Player);
@@ -3551,11 +3505,11 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
             Player = subBuilder.BuildPartial();
             break;
           }
-          case 66: {
+          case 50: {
             input.ReadMessageArray(tag, field_name, result.players_, global::PlayerDescription.DefaultInstance, extensionRegistry);
             break;
           }
-          case 74: {
+          case 58: {
             input.ReadMessageArray(tag, field_name, result.creatures_, global::CreatureDescription.DefaultInstance, extensionRegistry);
             break;
           }
@@ -3626,46 +3580,6 @@ public sealed partial class AreaDescriptionPacket : pb::GeneratedMessage<AreaDes
       PrepareBuilder();
       result.hasHeight = false;
       result.height_ = 0;
-      return this;
-    }
-    
-    public bool HasStartX {
-      get { return result.hasStartX; }
-    }
-    public int StartX {
-      get { return result.StartX; }
-      set { SetStartX(value); }
-    }
-    public Builder SetStartX(int value) {
-      PrepareBuilder();
-      result.hasStartX = true;
-      result.startX_ = value;
-      return this;
-    }
-    public Builder ClearStartX() {
-      PrepareBuilder();
-      result.hasStartX = false;
-      result.startX_ = 0;
-      return this;
-    }
-    
-    public bool HasStartY {
-      get { return result.hasStartY; }
-    }
-    public int StartY {
-      get { return result.StartY; }
-      set { SetStartY(value); }
-    }
-    public Builder SetStartY(int value) {
-      PrepareBuilder();
-      result.hasStartY = true;
-      result.startY_ = value;
-      return this;
-    }
-    public Builder ClearStartY() {
-      PrepareBuilder();
-      result.hasStartY = false;
-      result.startY_ = 0;
       return this;
     }
     
@@ -4480,8 +4394,8 @@ public sealed partial class CreatureRespawnPacket : pb::GeneratedMessage<Creatur
 public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureDescription, CreatureDescription.Builder> {
   private CreatureDescription() { }
   private static readonly CreatureDescription defaultInstance = new CreatureDescription().MakeReadOnly();
-  private static readonly string[] _creatureDescriptionFieldNames = new string[] { "creatureGuid", "creaturePosition", "textId" };
-  private static readonly uint[] _creatureDescriptionFieldTags = new uint[] { 10, 26, 16 };
+  private static readonly string[] _creatureDescriptionFieldNames = new string[] { "creatureGuid", "creaturePosition", "modelId", "skills", "stats" };
+  private static readonly uint[] _creatureDescriptionFieldTags = new uint[] { 10, 26, 16, 42, 34 };
   public static CreatureDescription DefaultInstance {
     get { return defaultInstance; }
   }
@@ -4512,14 +4426,14 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
     get { return creatureGuid_; }
   }
   
-  public const int TextIdFieldNumber = 2;
-  private bool hasTextId;
-  private int textId_;
-  public bool HasTextId {
-    get { return hasTextId; }
+  public const int ModelIdFieldNumber = 2;
+  private bool hasModelId;
+  private int modelId_;
+  public bool HasModelId {
+    get { return hasModelId; }
   }
-  public int TextId {
-    get { return textId_; }
+  public int ModelId {
+    get { return modelId_; }
   }
   
   public const int CreaturePositionFieldNumber = 3;
@@ -4532,12 +4446,39 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
     get { return creaturePosition_ ?? global::Position.DefaultInstance; }
   }
   
+  public const int StatsFieldNumber = 4;
+  private bool hasStats;
+  private global::StatsDescription stats_;
+  public bool HasStats {
+    get { return hasStats; }
+  }
+  public global::StatsDescription Stats {
+    get { return stats_ ?? global::StatsDescription.DefaultInstance; }
+  }
+  
+  public const int SkillsFieldNumber = 5;
+  private pbc::PopsicleList<global::SkillsDescription> skills_ = new pbc::PopsicleList<global::SkillsDescription>();
+  public scg::IList<global::SkillsDescription> SkillsList {
+    get { return skills_; }
+  }
+  public int SkillsCount {
+    get { return skills_.Count; }
+  }
+  public global::SkillsDescription GetSkills(int index) {
+    return skills_[index];
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCreatureGuid) return false;
-      if (!hasTextId) return false;
+      if (!hasModelId) return false;
       if (!hasCreaturePosition) return false;
+      if (!hasStats) return false;
       if (!CreaturePosition.IsInitialized) return false;
+      if (!Stats.IsInitialized) return false;
+      foreach (global::SkillsDescription element in SkillsList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -4548,11 +4489,17 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
     if (hasCreatureGuid) {
       output.WriteString(1, field_names[0], CreatureGuid);
     }
-    if (hasTextId) {
-      output.WriteInt32(2, field_names[2], TextId);
+    if (hasModelId) {
+      output.WriteInt32(2, field_names[2], ModelId);
     }
     if (hasCreaturePosition) {
       output.WriteMessage(3, field_names[1], CreaturePosition);
+    }
+    if (hasStats) {
+      output.WriteMessage(4, field_names[4], Stats);
+    }
+    if (skills_.Count > 0) {
+      output.WriteMessageArray(5, field_names[3], skills_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -4567,11 +4514,17 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       if (hasCreatureGuid) {
         size += pb::CodedOutputStream.ComputeStringSize(1, CreatureGuid);
       }
-      if (hasTextId) {
-        size += pb::CodedOutputStream.ComputeInt32Size(2, TextId);
+      if (hasModelId) {
+        size += pb::CodedOutputStream.ComputeInt32Size(2, ModelId);
       }
       if (hasCreaturePosition) {
         size += pb::CodedOutputStream.ComputeMessageSize(3, CreaturePosition);
+      }
+      if (hasStats) {
+        size += pb::CodedOutputStream.ComputeMessageSize(4, Stats);
+      }
+      foreach (global::SkillsDescription element in SkillsList) {
+        size += pb::CodedOutputStream.ComputeMessageSize(5, element);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -4610,6 +4563,7 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private CreatureDescription MakeReadOnly() {
+    skills_.MakeReadOnly();
     return this;
   }
   
@@ -4700,11 +4654,17 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       if (other.HasCreatureGuid) {
         CreatureGuid = other.CreatureGuid;
       }
-      if (other.HasTextId) {
-        TextId = other.TextId;
+      if (other.HasModelId) {
+        ModelId = other.ModelId;
       }
       if (other.HasCreaturePosition) {
         MergeCreaturePosition(other.CreaturePosition);
+      }
+      if (other.HasStats) {
+        MergeStats(other.Stats);
+      }
+      if (other.skills_.Count != 0) {
+        result.skills_.Add(other.skills_);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -4754,7 +4714,7 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
             break;
           }
           case 16: {
-            result.hasTextId = input.ReadInt32(ref result.textId_);
+            result.hasModelId = input.ReadInt32(ref result.modelId_);
             break;
           }
           case 26: {
@@ -4764,6 +4724,19 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             CreaturePosition = subBuilder.BuildPartial();
+            break;
+          }
+          case 34: {
+            global::StatsDescription.Builder subBuilder = global::StatsDescription.CreateBuilder();
+            if (result.hasStats) {
+              subBuilder.MergeFrom(Stats);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            Stats = subBuilder.BuildPartial();
+            break;
+          }
+          case 42: {
+            input.ReadMessageArray(tag, field_name, result.skills_, global::SkillsDescription.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -4797,23 +4770,23 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       return this;
     }
     
-    public bool HasTextId {
-      get { return result.hasTextId; }
+    public bool HasModelId {
+      get { return result.hasModelId; }
     }
-    public int TextId {
-      get { return result.TextId; }
-      set { SetTextId(value); }
+    public int ModelId {
+      get { return result.ModelId; }
+      set { SetModelId(value); }
     }
-    public Builder SetTextId(int value) {
+    public Builder SetModelId(int value) {
       PrepareBuilder();
-      result.hasTextId = true;
-      result.textId_ = value;
+      result.hasModelId = true;
+      result.modelId_ = value;
       return this;
     }
-    public Builder ClearTextId() {
+    public Builder ClearModelId() {
       PrepareBuilder();
-      result.hasTextId = false;
-      result.textId_ = 0;
+      result.hasModelId = false;
+      result.modelId_ = 0;
       return this;
     }
     
@@ -4856,6 +4829,90 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       result.creaturePosition_ = null;
       return this;
     }
+    
+    public bool HasStats {
+     get { return result.hasStats; }
+    }
+    public global::StatsDescription Stats {
+      get { return result.Stats; }
+      set { SetStats(value); }
+    }
+    public Builder SetStats(global::StatsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStats = true;
+      result.stats_ = value;
+      return this;
+    }
+    public Builder SetStats(global::StatsDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasStats = true;
+      result.stats_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeStats(global::StatsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasStats &&
+          result.stats_ != global::StatsDescription.DefaultInstance) {
+          result.stats_ = global::StatsDescription.CreateBuilder(result.stats_).MergeFrom(value).BuildPartial();
+      } else {
+        result.stats_ = value;
+      }
+      result.hasStats = true;
+      return this;
+    }
+    public Builder ClearStats() {
+      PrepareBuilder();
+      result.hasStats = false;
+      result.stats_ = null;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::SkillsDescription> SkillsList {
+      get { return PrepareBuilder().skills_; }
+    }
+    public int SkillsCount {
+      get { return result.SkillsCount; }
+    }
+    public global::SkillsDescription GetSkills(int index) {
+      return result.GetSkills(index);
+    }
+    public Builder SetSkills(int index, global::SkillsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.skills_[index] = value;
+      return this;
+    }
+    public Builder SetSkills(int index, global::SkillsDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.skills_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddSkills(global::SkillsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.skills_.Add(value);
+      return this;
+    }
+    public Builder AddSkills(global::SkillsDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.skills_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeSkills(scg::IEnumerable<global::SkillsDescription> values) {
+      PrepareBuilder();
+      result.skills_.Add(values);
+      return this;
+    }
+    public Builder ClearSkills() {
+      PrepareBuilder();
+      result.skills_.Clear();
+      return this;
+    }
   }
   static CreatureDescription() {
     object.ReferenceEquals(global::Proto.Networkmessage.Descriptor, null);
@@ -4866,8 +4923,8 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
 public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescription, PlayerDescription.Builder> {
   private PlayerDescription() { }
   private static readonly PlayerDescription defaultInstance = new PlayerDescription().MakeReadOnly();
-  private static readonly string[] _playerDescriptionFieldNames = new string[] { "playerGuid", "playerPosition" };
-  private static readonly uint[] _playerDescriptionFieldTags = new uint[] { 10, 18 };
+  private static readonly string[] _playerDescriptionFieldNames = new string[] { "playerGuid", "playerPosition", "skills", "stats" };
+  private static readonly uint[] _playerDescriptionFieldTags = new uint[] { 10, 18, 34, 26 };
   public static PlayerDescription DefaultInstance {
     get { return defaultInstance; }
   }
@@ -4908,11 +4965,38 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
     get { return playerPosition_ ?? global::Position.DefaultInstance; }
   }
   
+  public const int StatsFieldNumber = 3;
+  private bool hasStats;
+  private global::StatsDescription stats_;
+  public bool HasStats {
+    get { return hasStats; }
+  }
+  public global::StatsDescription Stats {
+    get { return stats_ ?? global::StatsDescription.DefaultInstance; }
+  }
+  
+  public const int SkillsFieldNumber = 4;
+  private pbc::PopsicleList<global::SkillsDescription> skills_ = new pbc::PopsicleList<global::SkillsDescription>();
+  public scg::IList<global::SkillsDescription> SkillsList {
+    get { return skills_; }
+  }
+  public int SkillsCount {
+    get { return skills_.Count; }
+  }
+  public global::SkillsDescription GetSkills(int index) {
+    return skills_[index];
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasPlayerGuid) return false;
       if (!hasPlayerPosition) return false;
+      if (!hasStats) return false;
       if (!PlayerPosition.IsInitialized) return false;
+      if (!Stats.IsInitialized) return false;
+      foreach (global::SkillsDescription element in SkillsList) {
+        if (!element.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -4925,6 +5009,12 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
     }
     if (hasPlayerPosition) {
       output.WriteMessage(2, field_names[1], PlayerPosition);
+    }
+    if (hasStats) {
+      output.WriteMessage(3, field_names[3], Stats);
+    }
+    if (skills_.Count > 0) {
+      output.WriteMessageArray(4, field_names[2], skills_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -4941,6 +5031,12 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       }
       if (hasPlayerPosition) {
         size += pb::CodedOutputStream.ComputeMessageSize(2, PlayerPosition);
+      }
+      if (hasStats) {
+        size += pb::CodedOutputStream.ComputeMessageSize(3, Stats);
+      }
+      foreach (global::SkillsDescription element in SkillsList) {
+        size += pb::CodedOutputStream.ComputeMessageSize(4, element);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -4979,6 +5075,7 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
   private PlayerDescription MakeReadOnly() {
+    skills_.MakeReadOnly();
     return this;
   }
   
@@ -5072,6 +5169,12 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       if (other.HasPlayerPosition) {
         MergePlayerPosition(other.PlayerPosition);
       }
+      if (other.HasStats) {
+        MergeStats(other.Stats);
+      }
+      if (other.skills_.Count != 0) {
+        result.skills_.Add(other.skills_);
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -5126,6 +5229,19 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             PlayerPosition = subBuilder.BuildPartial();
+            break;
+          }
+          case 26: {
+            global::StatsDescription.Builder subBuilder = global::StatsDescription.CreateBuilder();
+            if (result.hasStats) {
+              subBuilder.MergeFrom(Stats);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            Stats = subBuilder.BuildPartial();
+            break;
+          }
+          case 34: {
+            input.ReadMessageArray(tag, field_name, result.skills_, global::SkillsDescription.DefaultInstance, extensionRegistry);
             break;
           }
         }
@@ -5196,6 +5312,90 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       PrepareBuilder();
       result.hasPlayerPosition = false;
       result.playerPosition_ = null;
+      return this;
+    }
+    
+    public bool HasStats {
+     get { return result.hasStats; }
+    }
+    public global::StatsDescription Stats {
+      get { return result.Stats; }
+      set { SetStats(value); }
+    }
+    public Builder SetStats(global::StatsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasStats = true;
+      result.stats_ = value;
+      return this;
+    }
+    public Builder SetStats(global::StatsDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasStats = true;
+      result.stats_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeStats(global::StatsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasStats &&
+          result.stats_ != global::StatsDescription.DefaultInstance) {
+          result.stats_ = global::StatsDescription.CreateBuilder(result.stats_).MergeFrom(value).BuildPartial();
+      } else {
+        result.stats_ = value;
+      }
+      result.hasStats = true;
+      return this;
+    }
+    public Builder ClearStats() {
+      PrepareBuilder();
+      result.hasStats = false;
+      result.stats_ = null;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::SkillsDescription> SkillsList {
+      get { return PrepareBuilder().skills_; }
+    }
+    public int SkillsCount {
+      get { return result.SkillsCount; }
+    }
+    public global::SkillsDescription GetSkills(int index) {
+      return result.GetSkills(index);
+    }
+    public Builder SetSkills(int index, global::SkillsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.skills_[index] = value;
+      return this;
+    }
+    public Builder SetSkills(int index, global::SkillsDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.skills_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddSkills(global::SkillsDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.skills_.Add(value);
+      return this;
+    }
+    public Builder AddSkills(global::SkillsDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.skills_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeSkills(scg::IEnumerable<global::SkillsDescription> values) {
+      PrepareBuilder();
+      result.skills_.Add(values);
+      return this;
+    }
+    public Builder ClearSkills() {
+      PrepareBuilder();
+      result.skills_.Clear();
       return this;
     }
   }

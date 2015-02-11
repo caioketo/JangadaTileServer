@@ -11,9 +11,9 @@ namespace JangadaTileServer.Content.World
     {
         public Item Ground { get; set; }
         public List<Item> Items { get; set; }
-        public Position Position { get; set; }
+        public Utils.Position Position { get; set; }
 
-        public Tile(Position position)
+        public Tile(Utils.Position position)
         {
             this.Items = new List<Item>();
             this.Position = position;

@@ -9,3 +9,5 @@ C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Goo
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.csprojResolveAssemblyReference.cache
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.exe
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.pdb
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Newtonsoft.Json.xml

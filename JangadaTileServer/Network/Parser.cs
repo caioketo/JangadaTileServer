@@ -1,4 +1,5 @@
-﻿using Jangada;
+﻿using JangadaTileServer.Content;
+using Proto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace JangadaTileServer.Network
                     MessageHelper.SendCharacterList(client, chars);
                     break;
                 case Networkmessage.Types.Type.SELECTEDCHAR:
-                    //Game.GetInstance().OnPlayerLogin(connection);
+                    Game.GetInstance().OnPlayerLogin(client);
                     Console.WriteLine("Selected char id = " + message.SelectCharacterPacket.Id.ToString());
                     break;
                 default:

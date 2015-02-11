@@ -21,6 +21,7 @@ namespace JangadaTileServer.Content.World
             this.Guid = Util.GenGuid();
             this.Creatures = new List<Creature>();
             this.Players = new List<Player>();
+            this.Terrain = new Terrain(id);
         }
     }
 }
