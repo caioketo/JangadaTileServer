@@ -37,10 +37,10 @@ namespace JangadaTileServer.Network
         public static void SendAreaDescription(JWebClient client, Area area)
         {
             AreaDescriptionPacket.Builder areaDesc = AreaDescriptionPacket.CreateBuilder();
-            int minX = client.Player.Position.X - 13;
-            int maxX = client.Player.Position.X + 13;
-            int minY = client.Player.Position.Y - 19;
-            int maxY = client.Player.Position.Y + 19;
+            int minX = client.Player.Position.X - 19;
+            int maxX = client.Player.Position.X + 19;
+            int minY = client.Player.Position.Y - 13;
+            int maxY = client.Player.Position.Y + 13;
             areaDesc.SetStartX(minX)
                 .SetStartY(minY)
                 .SetWidth(area.Terrain.Width)
