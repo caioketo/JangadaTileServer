@@ -23,5 +23,21 @@ namespace JangadaTileServer.Content.World
             this.Players = new List<Player>();
             this.Terrain = new Terrain(id);
         }
+
+        public List<Player> PlayersInViewArea(Utils.Position position)
+        {
+            List<Player> players = new List<Player>();
+
+            foreach (Player player in Players)
+            {
+                if (player.IsVisible(position))
+                {
+                    players.Add(player);
+                }
+            }
+
+
+            return players;
+        }
     }
 }

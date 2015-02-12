@@ -34,6 +34,10 @@ namespace JangadaTileServer.Network
                     Game.GetInstance().OnPlayerLogin(client);
                     Console.WriteLine("Selected char id = " + message.SelectCharacterPacket.Id.ToString());
                     break;
+                case Networkmessage.Types.Type.REQUEST_MOVEMENT:
+                    Game.GetInstance().OnPlayerMove(client, message.RequestMovementPacket.MovementType);
+                    Console.WriteLine("Request Move: " + message.RequestMovementPacket.MovementType.ToString());
+                    break;
                 default:
                     break;
             }

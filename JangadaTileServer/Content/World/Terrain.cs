@@ -52,7 +52,14 @@ namespace JangadaTileServer.Content.World
                             y++;
                         }
                         this.Tiles[x, y] = new Tile(new Utils.Position(x, y, 1));
-                        this.Tiles[x, y].Ground = new Item((int)layer1.data[i]);
+                        if (x == 60 && y == 40)
+                        {
+                            this.Tiles[x, y].Ground = new Item(170);
+                        }
+                        else
+                        {
+                            this.Tiles[x, y].Ground = new Item((int)layer1.data[i]);
+                        }
                         x++;
                     }
                 }

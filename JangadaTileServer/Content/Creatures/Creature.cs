@@ -25,5 +25,12 @@ namespace JangadaTileServer.Content.Creatures
             this.CreatureId = creatureId;
             this.Skills = new List<Skills>();
         }
+
+        public bool IsVisible(Utils.Position position)
+        {
+            return (position.X >= this.Position.X - 19 && position.X <= this.Position.X + 19 &&
+                position.Y >= this.Position.Y - 13 && position.Y <= this.Position.Y + 13 &&
+                position.Z == this.Position.Z);
+        }
     }
 }

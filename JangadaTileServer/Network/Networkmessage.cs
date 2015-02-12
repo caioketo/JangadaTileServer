@@ -48,6 +48,8 @@ namespace Proto {
     internal static pb::FieldAccess.FieldAccessorTable<global::PlayerLoginPacket, global::PlayerLoginPacket.Builder> internal__static_PlayerLoginPacket__FieldAccessorTable;
     internal static pbd::MessageDescriptor internal__static_PlayerMovementPacket__Descriptor;
     internal static pb::FieldAccess.FieldAccessorTable<global::PlayerMovementPacket, global::PlayerMovementPacket.Builder> internal__static_PlayerMovementPacket__FieldAccessorTable;
+    internal static pbd::MessageDescriptor internal__static_MapSliceDescription__Descriptor;
+    internal static pb::FieldAccess.FieldAccessorTable<global::MapSliceDescription, global::MapSliceDescription.Builder> internal__static_MapSliceDescription__FieldAccessorTable;
     internal static pbd::MessageDescriptor internal__static_CharacterMovementPacket__Descriptor;
     internal static pb::FieldAccess.FieldAccessorTable<global::CharacterMovementPacket, global::CharacterMovementPacket.Builder> internal__static_CharacterMovementPacket__FieldAccessorTable;
     internal static pbd::MessageDescriptor internal__static_Messages__Descriptor;
@@ -85,34 +87,37 @@ namespace Proto {
           "AmlkGAEgAigFEgwKBG5hbWUYAiACKAkSDAoEaW5mbxgDIAIoCSI1ChBDaGFy" + 
           "YWN0ZXJzUGFja2V0EiEKDUNoYXJhY3Rlckxpc3QYASADKAsyCi5DaGFyYWN0" + 
           "ZXIiIwoVU2VsZWN0Q2hhcmFjdGVyUGFja2V0EgoKAmlkGAEgAigFIisKCFBv" + 
-          "c2l0aW9uEgkKAXgYASACKAUSCQoBeRgCIAIoBRIJCgF6GAMgAigFIpIBChVS" + 
+          "c2l0aW9uEgkKAXgYASACKAUSCQoBeRgCIAIoBRIJCgF6GAMgAigFIokBChVS" + 
           "ZXF1ZXN0TW92ZW1lbnRQYWNrZXQSOQoMbW92ZW1lbnRUeXBlGAEgAigOMiMu" + 
-          "UmVxdWVzdE1vdmVtZW50UGFja2V0Lk1vdmVtZW50VHlwZSI+CgxNb3ZlbWVu" + 
-          "dFR5cGUSCwoHRk9SV0FSRBABEgwKCEJBQ0tXQVJEEAISCAoETEVGVBADEgkK" + 
-          "BVJJR0hUEAQi+QEKFUFyZWFEZXNjcmlwdGlvblBhY2tldBIOCgZhcmVhSWQY" + 
-          "ASACKAUSDQoFd2lkdGgYAiACKAUSDgoGaGVpZ2h0GAMgAigFEg4KBnN0YXJ0" + 
-          "WBgEIAIoBRIOCgZzdGFydFkYBSACKAUSHwoFdGlsZXMYBiADKAsyEC5UaWxl" + 
-          "RGVzY3JpcHRpb24SIgoGcGxheWVyGAcgAigLMhIuUGxheWVyRGVzY3JpcHRp" + 
-          "b24SIwoHcGxheWVycxgIIAMoCzISLlBsYXllckRlc2NyaXB0aW9uEicKCWNy" + 
-          "ZWF0dXJlcxgJIAMoCzIULkNyZWF0dXJlRGVzY3JpcHRpb24iMgoPVGlsZURl" + 
-          "c2NyaXB0aW9uEhAKCGdyb3VuZElkGAEgAigFEg0KBWl0ZW1zGAIgAygFIkoK" + 
-          "FUNyZWF0dXJlUmVzcGF3blBhY2tldBIxChNjcmVhdHVyZURlc2NyaXB0aW9u" + 
-          "GAEgAigLMhQuQ3JlYXR1cmVEZXNjcmlwdGlvbiJgChNDcmVhdHVyZURlc2Ny" + 
-          "aXB0aW9uEhQKDGNyZWF0dXJlR3VpZBgBIAIoCRIOCgZ0ZXh0SWQYAiACKAUS" + 
-          "IwoQY3JlYXR1cmVQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9uIkoKEVBsYXll" + 
-          "ckRlc2NyaXB0aW9uEhIKCnBsYXllckd1aWQYASACKAkSIQoOcGxheWVyUG9z" + 
-          "aXRpb24YAiACKAsyCS5Qb3NpdGlvbiJsChBTdGF0c0Rlc2NyaXB0aW9uEgwK" + 
-          "BENPTlMYASACKAUSCwoDU1RSGAIgAigFEgsKA0lOVBgDIAIoBRILCgNXSVMY" + 
-          "BCACKAUSCwoDREVYGAUgAigFEgoKAkhQGAYgAigFEgoKAk1QGAcgAigFImoK" + 
-          "EVNraWxsc0Rlc2NyaXB0aW9uEgwKBE5hbWUYASACKAkSEQoJVGV4dHVyZUlk" + 
-          "GAIgAigFEhAKCENvb2xEb3duGAMgAigCEhAKCERpc3RhbmNlGAQgAigCEhAK" + 
-          "CEF1dG9DYXN0GAUgAigIIjcKEVBsYXllckxvZ2luUGFja2V0EiIKBnBsYXll" + 
-          "chgBIAIoCzISLlBsYXllckRlc2NyaXB0aW9uIjYKFFBsYXllck1vdmVtZW50" + 
-          "UGFja2V0Eh4KC25ld1Bvc2l0aW9uGAEgAigLMgkuUG9zaXRpb24iPQoXQ2hh" + 
-          "cmFjdGVyTW92ZW1lbnRQYWNrZXQSIgoGcGxheWVyGAEgAigLMhIuUGxheWVy" + 
-          "RGVzY3JpcHRpb24iMwoITWVzc2FnZXMSJwoOTmV0d29ya21lc3NhZ2UYASAD" + 
-          "KAsyDy5OZXR3b3JrbWVzc2FnZSIoChJQbGF5ZXJMb2dvdXRQYWNrZXQSEgoK" + 
-          "cGxheWVyR3VpZBgBIAIoCQ==");
+          "UmVxdWVzdE1vdmVtZW50UGFja2V0Lk1vdmVtZW50VHlwZSI1CgxNb3ZlbWVu" + 
+          "dFR5cGUSBgoCVVAQARIICgRET1dOEAISCAoETEVGVBADEgkKBVJJR0hUEAQi" + 
+          "+QEKFUFyZWFEZXNjcmlwdGlvblBhY2tldBIOCgZhcmVhSWQYASACKAUSDQoF" + 
+          "d2lkdGgYAiACKAUSDgoGaGVpZ2h0GAMgAigFEg4KBnN0YXJ0WBgEIAIoBRIO" + 
+          "CgZzdGFydFkYBSACKAUSHwoFdGlsZXMYBiADKAsyEC5UaWxlRGVzY3JpcHRp" + 
+          "b24SIgoGcGxheWVyGAcgAigLMhIuUGxheWVyRGVzY3JpcHRpb24SIwoHcGxh" + 
+          "eWVycxgIIAMoCzISLlBsYXllckRlc2NyaXB0aW9uEicKCWNyZWF0dXJlcxgJ" + 
+          "IAMoCzIULkNyZWF0dXJlRGVzY3JpcHRpb24iMgoPVGlsZURlc2NyaXB0aW9u" + 
+          "EhAKCGdyb3VuZElkGAEgAigFEg0KBWl0ZW1zGAIgAygFIkoKFUNyZWF0dXJl" + 
+          "UmVzcGF3blBhY2tldBIxChNjcmVhdHVyZURlc2NyaXB0aW9uGAEgAigLMhQu" + 
+          "Q3JlYXR1cmVEZXNjcmlwdGlvbiJgChNDcmVhdHVyZURlc2NyaXB0aW9uEhQK" + 
+          "DGNyZWF0dXJlR3VpZBgBIAIoCRIOCgZ0ZXh0SWQYAiACKAUSIwoQY3JlYXR1" + 
+          "cmVQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9uIkoKEVBsYXllckRlc2NyaXB0" + 
+          "aW9uEhIKCnBsYXllckd1aWQYASACKAkSIQoOcGxheWVyUG9zaXRpb24YAiAC" + 
+          "KAsyCS5Qb3NpdGlvbiJsChBTdGF0c0Rlc2NyaXB0aW9uEgwKBENPTlMYASAC" + 
+          "KAUSCwoDU1RSGAIgAigFEgsKA0lOVBgDIAIoBRILCgNXSVMYBCACKAUSCwoD" + 
+          "REVYGAUgAigFEgoKAkhQGAYgAigFEgoKAk1QGAcgAigFImoKEVNraWxsc0Rl" + 
+          "c2NyaXB0aW9uEgwKBE5hbWUYASACKAkSEQoJVGV4dHVyZUlkGAIgAigFEhAK" + 
+          "CENvb2xEb3duGAMgAigCEhAKCERpc3RhbmNlGAQgAigCEhAKCEF1dG9DYXN0" + 
+          "GAUgAigIIjcKEVBsYXllckxvZ2luUGFja2V0EiIKBnBsYXllchgBIAIoCzIS" + 
+          "LlBsYXllckRlc2NyaXB0aW9uIl4KFFBsYXllck1vdmVtZW50UGFja2V0Eh4K" + 
+          "C25ld1Bvc2l0aW9uGAEgAigLMgkuUG9zaXRpb24SJgoIbWFwU2xpY2UYAiAC" + 
+          "KAsyFC5NYXBTbGljZURlc2NyaXB0aW9uInIKE01hcFNsaWNlRGVzY3JpcHRp" + 
+          "b24SDgoGc3RhcnRYGAEgAigFEgwKBGVuZFgYAiACKAUSDgoGc3RhcnRZGAMg" + 
+          "AigFEgwKBGVuZFkYBCACKAUSHwoFdGlsZXMYBSADKAsyEC5UaWxlRGVzY3Jp" + 
+          "cHRpb24iPQoXQ2hhcmFjdGVyTW92ZW1lbnRQYWNrZXQSIgoGcGxheWVyGAEg" + 
+          "AigLMhIuUGxheWVyRGVzY3JpcHRpb24iMwoITWVzc2FnZXMSJwoOTmV0d29y" + 
+          "a21lc3NhZ2UYASADKAsyDy5OZXR3b3JrbWVzc2FnZSIoChJQbGF5ZXJMb2dv" + 
+          "dXRQYWNrZXQSEgoKcGxheWVyR3VpZBgBIAIoCQ==");
       pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
         descriptor = root;
         internal__static_Networkmessage__Descriptor = Descriptor.MessageTypes[0];
@@ -178,16 +183,20 @@ namespace Proto {
         internal__static_PlayerMovementPacket__Descriptor = Descriptor.MessageTypes[15];
         internal__static_PlayerMovementPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::PlayerMovementPacket, global::PlayerMovementPacket.Builder>(internal__static_PlayerMovementPacket__Descriptor,
-                new string[] { "NewPosition", });
-        internal__static_CharacterMovementPacket__Descriptor = Descriptor.MessageTypes[16];
+                new string[] { "NewPosition", "MapSlice", });
+        internal__static_MapSliceDescription__Descriptor = Descriptor.MessageTypes[16];
+        internal__static_MapSliceDescription__FieldAccessorTable = 
+            new pb::FieldAccess.FieldAccessorTable<global::MapSliceDescription, global::MapSliceDescription.Builder>(internal__static_MapSliceDescription__Descriptor,
+                new string[] { "StartX", "EndX", "StartY", "EndY", "Tiles", });
+        internal__static_CharacterMovementPacket__Descriptor = Descriptor.MessageTypes[17];
         internal__static_CharacterMovementPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::CharacterMovementPacket, global::CharacterMovementPacket.Builder>(internal__static_CharacterMovementPacket__Descriptor,
                 new string[] { "Player", });
-        internal__static_Messages__Descriptor = Descriptor.MessageTypes[17];
+        internal__static_Messages__Descriptor = Descriptor.MessageTypes[18];
         internal__static_Messages__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::Messages, global::Messages.Builder>(internal__static_Messages__Descriptor,
                 new string[] { "Networkmessage", });
-        internal__static_PlayerLogoutPacket__Descriptor = Descriptor.MessageTypes[18];
+        internal__static_PlayerLogoutPacket__Descriptor = Descriptor.MessageTypes[19];
         internal__static_PlayerLogoutPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::PlayerLogoutPacket, global::PlayerLogoutPacket.Builder>(internal__static_PlayerLogoutPacket__Descriptor,
                 new string[] { "PlayerGuid", });
@@ -2848,8 +2857,8 @@ public sealed partial class RequestMovementPacket : pb::GeneratedMessage<Request
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   public static partial class Types {
     public enum MovementType {
-      FORWARD = 1,
-      BACKWARD = 2,
+      UP = 1,
+      DOWN = 2,
       LEFT = 3,
       RIGHT = 4,
     }
@@ -2859,7 +2868,7 @@ public sealed partial class RequestMovementPacket : pb::GeneratedMessage<Request
   
   public const int MovementTypeFieldNumber = 1;
   private bool hasMovementType;
-  private global::RequestMovementPacket.Types.MovementType movementType_ = global::RequestMovementPacket.Types.MovementType.FORWARD;
+  private global::RequestMovementPacket.Types.MovementType movementType_ = global::RequestMovementPacket.Types.MovementType.UP;
   public bool HasMovementType {
     get { return hasMovementType; }
   }
@@ -3101,7 +3110,7 @@ public sealed partial class RequestMovementPacket : pb::GeneratedMessage<Request
     public Builder ClearMovementType() {
       PrepareBuilder();
       result.hasMovementType = false;
-      result.movementType_ = global::RequestMovementPacket.Types.MovementType.FORWARD;
+      result.movementType_ = global::RequestMovementPacket.Types.MovementType.UP;
       return this;
     }
   }
@@ -6488,8 +6497,8 @@ public sealed partial class PlayerLoginPacket : pb::GeneratedMessage<PlayerLogin
 public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMovementPacket, PlayerMovementPacket.Builder> {
   private PlayerMovementPacket() { }
   private static readonly PlayerMovementPacket defaultInstance = new PlayerMovementPacket().MakeReadOnly();
-  private static readonly string[] _playerMovementPacketFieldNames = new string[] { "newPosition" };
-  private static readonly uint[] _playerMovementPacketFieldTags = new uint[] { 10 };
+  private static readonly string[] _playerMovementPacketFieldNames = new string[] { "mapSlice", "newPosition" };
+  private static readonly uint[] _playerMovementPacketFieldTags = new uint[] { 18, 10 };
   public static PlayerMovementPacket DefaultInstance {
     get { return defaultInstance; }
   }
@@ -6520,10 +6529,22 @@ public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMo
     get { return newPosition_ ?? global::Position.DefaultInstance; }
   }
   
+  public const int MapSliceFieldNumber = 2;
+  private bool hasMapSlice;
+  private global::MapSliceDescription mapSlice_;
+  public bool HasMapSlice {
+    get { return hasMapSlice; }
+  }
+  public global::MapSliceDescription MapSlice {
+    get { return mapSlice_ ?? global::MapSliceDescription.DefaultInstance; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasNewPosition) return false;
+      if (!hasMapSlice) return false;
       if (!NewPosition.IsInitialized) return false;
+      if (!MapSlice.IsInitialized) return false;
       return true;
     }
   }
@@ -6532,7 +6553,10 @@ public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMo
     int size = SerializedSize;
     string[] field_names = _playerMovementPacketFieldNames;
     if (hasNewPosition) {
-      output.WriteMessage(1, field_names[0], NewPosition);
+      output.WriteMessage(1, field_names[1], NewPosition);
+    }
+    if (hasMapSlice) {
+      output.WriteMessage(2, field_names[0], MapSlice);
     }
     UnknownFields.WriteTo(output);
   }
@@ -6546,6 +6570,9 @@ public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMo
       size = 0;
       if (hasNewPosition) {
         size += pb::CodedOutputStream.ComputeMessageSize(1, NewPosition);
+      }
+      if (hasMapSlice) {
+        size += pb::CodedOutputStream.ComputeMessageSize(2, MapSlice);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -6674,6 +6701,9 @@ public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMo
       if (other.HasNewPosition) {
         MergeNewPosition(other.NewPosition);
       }
+      if (other.HasMapSlice) {
+        MergeMapSlice(other.MapSlice);
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -6726,6 +6756,15 @@ public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMo
             NewPosition = subBuilder.BuildPartial();
             break;
           }
+          case 18: {
+            global::MapSliceDescription.Builder subBuilder = global::MapSliceDescription.CreateBuilder();
+            if (result.hasMapSlice) {
+              subBuilder.MergeFrom(MapSlice);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            MapSlice = subBuilder.BuildPartial();
+            break;
+          }
         }
       }
       
@@ -6775,8 +6814,524 @@ public sealed partial class PlayerMovementPacket : pb::GeneratedMessage<PlayerMo
       result.newPosition_ = null;
       return this;
     }
+    
+    public bool HasMapSlice {
+     get { return result.hasMapSlice; }
+    }
+    public global::MapSliceDescription MapSlice {
+      get { return result.MapSlice; }
+      set { SetMapSlice(value); }
+    }
+    public Builder SetMapSlice(global::MapSliceDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasMapSlice = true;
+      result.mapSlice_ = value;
+      return this;
+    }
+    public Builder SetMapSlice(global::MapSliceDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasMapSlice = true;
+      result.mapSlice_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeMapSlice(global::MapSliceDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasMapSlice &&
+          result.mapSlice_ != global::MapSliceDescription.DefaultInstance) {
+          result.mapSlice_ = global::MapSliceDescription.CreateBuilder(result.mapSlice_).MergeFrom(value).BuildPartial();
+      } else {
+        result.mapSlice_ = value;
+      }
+      result.hasMapSlice = true;
+      return this;
+    }
+    public Builder ClearMapSlice() {
+      PrepareBuilder();
+      result.hasMapSlice = false;
+      result.mapSlice_ = null;
+      return this;
+    }
   }
   static PlayerMovementPacket() {
+    object.ReferenceEquals(global::Proto.Networkmessage.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class MapSliceDescription : pb::GeneratedMessage<MapSliceDescription, MapSliceDescription.Builder> {
+  private MapSliceDescription() { }
+  private static readonly MapSliceDescription defaultInstance = new MapSliceDescription().MakeReadOnly();
+  private static readonly string[] _mapSliceDescriptionFieldNames = new string[] { "endX", "endY", "startX", "startY", "tiles" };
+  private static readonly uint[] _mapSliceDescriptionFieldTags = new uint[] { 16, 32, 8, 24, 42 };
+  public static MapSliceDescription DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override MapSliceDescription DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override MapSliceDescription ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::Proto.Networkmessage.internal__static_MapSliceDescription__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<MapSliceDescription, MapSliceDescription.Builder> InternalFieldAccessors {
+    get { return global::Proto.Networkmessage.internal__static_MapSliceDescription__FieldAccessorTable; }
+  }
+  
+  public const int StartXFieldNumber = 1;
+  private bool hasStartX;
+  private int startX_;
+  public bool HasStartX {
+    get { return hasStartX; }
+  }
+  public int StartX {
+    get { return startX_; }
+  }
+  
+  public const int EndXFieldNumber = 2;
+  private bool hasEndX;
+  private int endX_;
+  public bool HasEndX {
+    get { return hasEndX; }
+  }
+  public int EndX {
+    get { return endX_; }
+  }
+  
+  public const int StartYFieldNumber = 3;
+  private bool hasStartY;
+  private int startY_;
+  public bool HasStartY {
+    get { return hasStartY; }
+  }
+  public int StartY {
+    get { return startY_; }
+  }
+  
+  public const int EndYFieldNumber = 4;
+  private bool hasEndY;
+  private int endY_;
+  public bool HasEndY {
+    get { return hasEndY; }
+  }
+  public int EndY {
+    get { return endY_; }
+  }
+  
+  public const int TilesFieldNumber = 5;
+  private pbc::PopsicleList<global::TileDescription> tiles_ = new pbc::PopsicleList<global::TileDescription>();
+  public scg::IList<global::TileDescription> TilesList {
+    get { return tiles_; }
+  }
+  public int TilesCount {
+    get { return tiles_.Count; }
+  }
+  public global::TileDescription GetTiles(int index) {
+    return tiles_[index];
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasStartX) return false;
+      if (!hasEndX) return false;
+      if (!hasStartY) return false;
+      if (!hasEndY) return false;
+      foreach (global::TileDescription element in TilesList) {
+        if (!element.IsInitialized) return false;
+      }
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    int size = SerializedSize;
+    string[] field_names = _mapSliceDescriptionFieldNames;
+    if (hasStartX) {
+      output.WriteInt32(1, field_names[2], StartX);
+    }
+    if (hasEndX) {
+      output.WriteInt32(2, field_names[0], EndX);
+    }
+    if (hasStartY) {
+      output.WriteInt32(3, field_names[3], StartY);
+    }
+    if (hasEndY) {
+      output.WriteInt32(4, field_names[1], EndY);
+    }
+    if (tiles_.Count > 0) {
+      output.WriteMessageArray(5, field_names[4], tiles_);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      
+      size = 0;
+      if (hasStartX) {
+        size += pb::CodedOutputStream.ComputeInt32Size(1, StartX);
+      }
+      if (hasEndX) {
+        size += pb::CodedOutputStream.ComputeInt32Size(2, EndX);
+      }
+      if (hasStartY) {
+        size += pb::CodedOutputStream.ComputeInt32Size(3, StartY);
+      }
+      if (hasEndY) {
+        size += pb::CodedOutputStream.ComputeInt32Size(4, EndY);
+      }
+      foreach (global::TileDescription element in TilesList) {
+        size += pb::CodedOutputStream.ComputeMessageSize(5, element);
+      }
+      size += UnknownFields.SerializedSize;
+      memoizedSerializedSize = size;
+      return size;
+    }
+  }
+  
+  public static MapSliceDescription ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static MapSliceDescription ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static MapSliceDescription ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static MapSliceDescription ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private MapSliceDescription MakeReadOnly() {
+    tiles_.MakeReadOnly();
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(MapSliceDescription prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<MapSliceDescription, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(MapSliceDescription cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private MapSliceDescription result;
+    
+    private MapSliceDescription PrepareBuilder() {
+      if (resultIsReadOnly) {
+        MapSliceDescription original = result;
+        result = new MapSliceDescription();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override MapSliceDescription MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::MapSliceDescription.Descriptor; }
+    }
+    
+    public override MapSliceDescription DefaultInstanceForType {
+      get { return global::MapSliceDescription.DefaultInstance; }
+    }
+    
+    public override MapSliceDescription BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is MapSliceDescription) {
+        return MergeFrom((MapSliceDescription) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(MapSliceDescription other) {
+      if (other == global::MapSliceDescription.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasStartX) {
+        StartX = other.StartX;
+      }
+      if (other.HasEndX) {
+        EndX = other.EndX;
+      }
+      if (other.HasStartY) {
+        StartY = other.StartY;
+      }
+      if (other.HasEndY) {
+        EndY = other.EndY;
+      }
+      if (other.tiles_.Count != 0) {
+        result.tiles_.Add(other.tiles_);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_mapSliceDescriptionFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _mapSliceDescriptionFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 8: {
+            result.hasStartX = input.ReadInt32(ref result.startX_);
+            break;
+          }
+          case 16: {
+            result.hasEndX = input.ReadInt32(ref result.endX_);
+            break;
+          }
+          case 24: {
+            result.hasStartY = input.ReadInt32(ref result.startY_);
+            break;
+          }
+          case 32: {
+            result.hasEndY = input.ReadInt32(ref result.endY_);
+            break;
+          }
+          case 42: {
+            input.ReadMessageArray(tag, field_name, result.tiles_, global::TileDescription.DefaultInstance, extensionRegistry);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasStartX {
+      get { return result.hasStartX; }
+    }
+    public int StartX {
+      get { return result.StartX; }
+      set { SetStartX(value); }
+    }
+    public Builder SetStartX(int value) {
+      PrepareBuilder();
+      result.hasStartX = true;
+      result.startX_ = value;
+      return this;
+    }
+    public Builder ClearStartX() {
+      PrepareBuilder();
+      result.hasStartX = false;
+      result.startX_ = 0;
+      return this;
+    }
+    
+    public bool HasEndX {
+      get { return result.hasEndX; }
+    }
+    public int EndX {
+      get { return result.EndX; }
+      set { SetEndX(value); }
+    }
+    public Builder SetEndX(int value) {
+      PrepareBuilder();
+      result.hasEndX = true;
+      result.endX_ = value;
+      return this;
+    }
+    public Builder ClearEndX() {
+      PrepareBuilder();
+      result.hasEndX = false;
+      result.endX_ = 0;
+      return this;
+    }
+    
+    public bool HasStartY {
+      get { return result.hasStartY; }
+    }
+    public int StartY {
+      get { return result.StartY; }
+      set { SetStartY(value); }
+    }
+    public Builder SetStartY(int value) {
+      PrepareBuilder();
+      result.hasStartY = true;
+      result.startY_ = value;
+      return this;
+    }
+    public Builder ClearStartY() {
+      PrepareBuilder();
+      result.hasStartY = false;
+      result.startY_ = 0;
+      return this;
+    }
+    
+    public bool HasEndY {
+      get { return result.hasEndY; }
+    }
+    public int EndY {
+      get { return result.EndY; }
+      set { SetEndY(value); }
+    }
+    public Builder SetEndY(int value) {
+      PrepareBuilder();
+      result.hasEndY = true;
+      result.endY_ = value;
+      return this;
+    }
+    public Builder ClearEndY() {
+      PrepareBuilder();
+      result.hasEndY = false;
+      result.endY_ = 0;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<global::TileDescription> TilesList {
+      get { return PrepareBuilder().tiles_; }
+    }
+    public int TilesCount {
+      get { return result.TilesCount; }
+    }
+    public global::TileDescription GetTiles(int index) {
+      return result.GetTiles(index);
+    }
+    public Builder SetTiles(int index, global::TileDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.tiles_[index] = value;
+      return this;
+    }
+    public Builder SetTiles(int index, global::TileDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.tiles_[index] = builderForValue.Build();
+      return this;
+    }
+    public Builder AddTiles(global::TileDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.tiles_.Add(value);
+      return this;
+    }
+    public Builder AddTiles(global::TileDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.tiles_.Add(builderForValue.Build());
+      return this;
+    }
+    public Builder AddRangeTiles(scg::IEnumerable<global::TileDescription> values) {
+      PrepareBuilder();
+      result.tiles_.Add(values);
+      return this;
+    }
+    public Builder ClearTiles() {
+      PrepareBuilder();
+      result.tiles_.Clear();
+      return this;
+    }
+  }
+  static MapSliceDescription() {
     object.ReferenceEquals(global::Proto.Networkmessage.Descriptor, null);
   }
 }
