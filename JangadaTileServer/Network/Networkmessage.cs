@@ -101,23 +101,24 @@ namespace Proto {
           "UmVzcGF3blBhY2tldBIxChNjcmVhdHVyZURlc2NyaXB0aW9uGAEgAigLMhQu" + 
           "Q3JlYXR1cmVEZXNjcmlwdGlvbiJgChNDcmVhdHVyZURlc2NyaXB0aW9uEhQK" + 
           "DGNyZWF0dXJlR3VpZBgBIAIoCRIOCgZ0ZXh0SWQYAiACKAUSIwoQY3JlYXR1" + 
-          "cmVQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9uIkoKEVBsYXllckRlc2NyaXB0" + 
-          "aW9uEhIKCnBsYXllckd1aWQYASACKAkSIQoOcGxheWVyUG9zaXRpb24YAiAC" + 
-          "KAsyCS5Qb3NpdGlvbiJsChBTdGF0c0Rlc2NyaXB0aW9uEgwKBENPTlMYASAC" + 
-          "KAUSCwoDU1RSGAIgAigFEgsKA0lOVBgDIAIoBRILCgNXSVMYBCACKAUSCwoD" + 
-          "REVYGAUgAigFEgoKAkhQGAYgAigFEgoKAk1QGAcgAigFImoKEVNraWxsc0Rl" + 
-          "c2NyaXB0aW9uEgwKBE5hbWUYASACKAkSEQoJVGV4dHVyZUlkGAIgAigFEhAK" + 
-          "CENvb2xEb3duGAMgAigCEhAKCERpc3RhbmNlGAQgAigCEhAKCEF1dG9DYXN0" + 
-          "GAUgAigIIjcKEVBsYXllckxvZ2luUGFja2V0EiIKBnBsYXllchgBIAIoCzIS" + 
-          "LlBsYXllckRlc2NyaXB0aW9uIl4KFFBsYXllck1vdmVtZW50UGFja2V0Eh4K" + 
-          "C25ld1Bvc2l0aW9uGAEgAigLMgkuUG9zaXRpb24SJgoIbWFwU2xpY2UYAiAC" + 
-          "KAsyFC5NYXBTbGljZURlc2NyaXB0aW9uInIKE01hcFNsaWNlRGVzY3JpcHRp" + 
-          "b24SDgoGc3RhcnRYGAEgAigFEgwKBGVuZFgYAiACKAUSDgoGc3RhcnRZGAMg" + 
-          "AigFEgwKBGVuZFkYBCACKAUSHwoFdGlsZXMYBSADKAsyEC5UaWxlRGVzY3Jp" + 
-          "cHRpb24iPQoXQ2hhcmFjdGVyTW92ZW1lbnRQYWNrZXQSIgoGcGxheWVyGAEg" + 
-          "AigLMhIuUGxheWVyRGVzY3JpcHRpb24iMwoITWVzc2FnZXMSJwoOTmV0d29y" + 
-          "a21lc3NhZ2UYASADKAsyDy5OZXR3b3JrbWVzc2FnZSIoChJQbGF5ZXJMb2dv" + 
-          "dXRQYWNrZXQSEgoKcGxheWVyR3VpZBgBIAIoCQ==");
+          "cmVQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9uImcKEVBsYXllckRlc2NyaXB0" + 
+          "aW9uEhIKCnBsYXllckd1aWQYASACKAkSDAoEbmFtZRgCIAIoCRIhCg5wbGF5" + 
+          "ZXJQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9uEg0KBXNwZWVkGAQgAigFImwK" + 
+          "EFN0YXRzRGVzY3JpcHRpb24SDAoEQ09OUxgBIAIoBRILCgNTVFIYAiACKAUS" + 
+          "CwoDSU5UGAMgAigFEgsKA1dJUxgEIAIoBRILCgNERVgYBSACKAUSCgoCSFAY" + 
+          "BiACKAUSCgoCTVAYByACKAUiagoRU2tpbGxzRGVzY3JpcHRpb24SDAoETmFt" + 
+          "ZRgBIAIoCRIRCglUZXh0dXJlSWQYAiACKAUSEAoIQ29vbERvd24YAyACKAIS" + 
+          "EAoIRGlzdGFuY2UYBCACKAISEAoIQXV0b0Nhc3QYBSACKAgiNwoRUGxheWVy" + 
+          "TG9naW5QYWNrZXQSIgoGcGxheWVyGAEgAigLMhIuUGxheWVyRGVzY3JpcHRp" + 
+          "b24iXgoUUGxheWVyTW92ZW1lbnRQYWNrZXQSHgoLbmV3UG9zaXRpb24YASAC" + 
+          "KAsyCS5Qb3NpdGlvbhImCghtYXBTbGljZRgCIAIoCzIULk1hcFNsaWNlRGVz" + 
+          "Y3JpcHRpb24icgoTTWFwU2xpY2VEZXNjcmlwdGlvbhIOCgZzdGFydFgYASAC" + 
+          "KAUSDAoEZW5kWBgCIAIoBRIOCgZzdGFydFkYAyACKAUSDAoEZW5kWRgEIAIo" + 
+          "BRIfCgV0aWxlcxgFIAMoCzIQLlRpbGVEZXNjcmlwdGlvbiI9ChdDaGFyYWN0" + 
+          "ZXJNb3ZlbWVudFBhY2tldBIiCgZwbGF5ZXIYASACKAsyEi5QbGF5ZXJEZXNj" + 
+          "cmlwdGlvbiIzCghNZXNzYWdlcxInCg5OZXR3b3JrbWVzc2FnZRgBIAMoCzIP" + 
+          "Lk5ldHdvcmttZXNzYWdlIigKElBsYXllckxvZ291dFBhY2tldBISCgpwbGF5" + 
+          "ZXJHdWlkGAEgAigJ");
       pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
         descriptor = root;
         internal__static_Networkmessage__Descriptor = Descriptor.MessageTypes[0];
@@ -167,7 +168,7 @@ namespace Proto {
         internal__static_PlayerDescription__Descriptor = Descriptor.MessageTypes[11];
         internal__static_PlayerDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::PlayerDescription, global::PlayerDescription.Builder>(internal__static_PlayerDescription__Descriptor,
-                new string[] { "PlayerGuid", "PlayerPosition", });
+                new string[] { "PlayerGuid", "Name", "PlayerPosition", "Speed", });
         internal__static_StatsDescription__Descriptor = Descriptor.MessageTypes[12];
         internal__static_StatsDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::StatsDescription, global::StatsDescription.Builder>(internal__static_StatsDescription__Descriptor,
@@ -4875,8 +4876,8 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
 public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescription, PlayerDescription.Builder> {
   private PlayerDescription() { }
   private static readonly PlayerDescription defaultInstance = new PlayerDescription().MakeReadOnly();
-  private static readonly string[] _playerDescriptionFieldNames = new string[] { "playerGuid", "playerPosition" };
-  private static readonly uint[] _playerDescriptionFieldTags = new uint[] { 10, 18 };
+  private static readonly string[] _playerDescriptionFieldNames = new string[] { "name", "playerGuid", "playerPosition", "speed" };
+  private static readonly uint[] _playerDescriptionFieldTags = new uint[] { 18, 10, 26, 32 };
   public static PlayerDescription DefaultInstance {
     get { return defaultInstance; }
   }
@@ -4907,7 +4908,17 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
     get { return playerGuid_; }
   }
   
-  public const int PlayerPositionFieldNumber = 2;
+  public const int NameFieldNumber = 2;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
+  public const int PlayerPositionFieldNumber = 3;
   private bool hasPlayerPosition;
   private global::Position playerPosition_;
   public bool HasPlayerPosition {
@@ -4917,10 +4928,22 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
     get { return playerPosition_ ?? global::Position.DefaultInstance; }
   }
   
+  public const int SpeedFieldNumber = 4;
+  private bool hasSpeed;
+  private int speed_;
+  public bool HasSpeed {
+    get { return hasSpeed; }
+  }
+  public int Speed {
+    get { return speed_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasPlayerGuid) return false;
+      if (!hasName) return false;
       if (!hasPlayerPosition) return false;
+      if (!hasSpeed) return false;
       if (!PlayerPosition.IsInitialized) return false;
       return true;
     }
@@ -4930,10 +4953,16 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
     int size = SerializedSize;
     string[] field_names = _playerDescriptionFieldNames;
     if (hasPlayerGuid) {
-      output.WriteString(1, field_names[0], PlayerGuid);
+      output.WriteString(1, field_names[1], PlayerGuid);
+    }
+    if (hasName) {
+      output.WriteString(2, field_names[0], Name);
     }
     if (hasPlayerPosition) {
-      output.WriteMessage(2, field_names[1], PlayerPosition);
+      output.WriteMessage(3, field_names[2], PlayerPosition);
+    }
+    if (hasSpeed) {
+      output.WriteInt32(4, field_names[3], Speed);
     }
     UnknownFields.WriteTo(output);
   }
@@ -4948,8 +4977,14 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       if (hasPlayerGuid) {
         size += pb::CodedOutputStream.ComputeStringSize(1, PlayerGuid);
       }
+      if (hasName) {
+        size += pb::CodedOutputStream.ComputeStringSize(2, Name);
+      }
       if (hasPlayerPosition) {
-        size += pb::CodedOutputStream.ComputeMessageSize(2, PlayerPosition);
+        size += pb::CodedOutputStream.ComputeMessageSize(3, PlayerPosition);
+      }
+      if (hasSpeed) {
+        size += pb::CodedOutputStream.ComputeInt32Size(4, Speed);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -5078,8 +5113,14 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       if (other.HasPlayerGuid) {
         PlayerGuid = other.PlayerGuid;
       }
+      if (other.HasName) {
+        Name = other.Name;
+      }
       if (other.HasPlayerPosition) {
         MergePlayerPosition(other.PlayerPosition);
+      }
+      if (other.HasSpeed) {
+        Speed = other.Speed;
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -5129,12 +5170,20 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
             break;
           }
           case 18: {
+            result.hasName = input.ReadString(ref result.name_);
+            break;
+          }
+          case 26: {
             global::Position.Builder subBuilder = global::Position.CreateBuilder();
             if (result.hasPlayerPosition) {
               subBuilder.MergeFrom(PlayerPosition);
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             PlayerPosition = subBuilder.BuildPartial();
+            break;
+          }
+          case 32: {
+            result.hasSpeed = input.ReadInt32(ref result.speed_);
             break;
           }
         }
@@ -5165,6 +5214,27 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       PrepareBuilder();
       result.hasPlayerGuid = false;
       result.playerGuid_ = "";
+      return this;
+    }
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
       return this;
     }
     
@@ -5205,6 +5275,26 @@ public sealed partial class PlayerDescription : pb::GeneratedMessage<PlayerDescr
       PrepareBuilder();
       result.hasPlayerPosition = false;
       result.playerPosition_ = null;
+      return this;
+    }
+    
+    public bool HasSpeed {
+      get { return result.hasSpeed; }
+    }
+    public int Speed {
+      get { return result.Speed; }
+      set { SetSpeed(value); }
+    }
+    public Builder SetSpeed(int value) {
+      PrepareBuilder();
+      result.hasSpeed = true;
+      result.speed_ = value;
+      return this;
+    }
+    public Builder ClearSpeed() {
+      PrepareBuilder();
+      result.hasSpeed = false;
+      result.speed_ = 0;
       return this;
     }
   }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JangadaTileServer.Content.Creatures;
 
 namespace JangadaTileServer.Network
 {
@@ -34,8 +35,9 @@ namespace JangadaTileServer.Network
             Send(messagesToSend, client);
         }
 
-        public static void SendAreaDescription(JWebClient client, Area area)
+        public static AreaDescriptionPacket GenAreaDescription(JWebClient client)
         {
+            Area area = client.Player.Area;
             AreaDescriptionPacket.Builder areaDesc = AreaDescriptionPacket.CreateBuilder();
             int minX = client.Player.Position.X - 19;
             int maxX = client.Player.Position.X + 19;
@@ -46,14 +48,7 @@ namespace JangadaTileServer.Network
                 .SetWidth(area.Terrain.Width)
                 .SetHeight(area.Terrain.Height)
                 .SetAreaId(area.Id);
-            PlayerDescription playerDesc = PlayerDescription.CreateBuilder()
-                .SetPlayerGuid(client.Player.CreatureGuid.ToString("N"))
-                .SetPlayerPosition(Position.CreateBuilder()
-                .SetX(client.Player.Position.X)
-                .SetY(client.Player.Position.Y)
-                .SetZ(client.Player.Position.Z)
-                .Build()).Build();
-            areaDesc.SetPlayer(playerDesc);
+            areaDesc.SetPlayer(GenPlayerDesc(client.Player));
             for (int x = minX; x < maxX; x++)
             {
                 for (int y = minY; y < maxY; y++)
@@ -69,66 +64,42 @@ namespace JangadaTileServer.Network
                 }
             }
 
+            foreach (Player player in area.PlayersInViewArea(client.Player.Position))
+            {
+                if (player.CreatureGuid != client.Player.CreatureGuid)
+                {
+                    areaDesc.AddPlayers(GenPlayerDesc(player));
+                }
+            }
 
-
-            Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
-            newMessage.AreaDescriptionPacket = areaDesc.Build();
-            newMessage.Type = Networkmessage.Types.Type.AREA_DESCRIPTION;
-            Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
-            Send(messagesToSend, client);
+            return areaDesc.Build();
         }
 
-        internal static void SendPlayerMove(JWebClient client, RequestMovementPacket.Types.MovementType movementType)
+        internal static PlayerDescription GenPlayerDesc(Player player)
         {
-            PlayerMovementPacket.Builder playerMovePacket = PlayerMovementPacket.CreateBuilder()
-                .SetNewPosition(Position.CreateBuilder()
-                .SetX(client.Player.Position.X)
-                .SetY(client.Player.Position.Y)
-                .SetZ(client.Player.Position.Z)
-                .Build());
-            int startX = client.Player.Position.X - 19;
-            int endX = client.Player.Position.X + 19;
-            int startY = client.Player.Position.Y - 13;
-            int endY = client.Player.Position.Y + 13;
-            switch (movementType)
-            {
-                case RequestMovementPacket.Types.MovementType.UP:
-                    endY = startY;
-                    startY--;
-                    break;
-                case RequestMovementPacket.Types.MovementType.DOWN:
-                    startY = client.Player.Position.Y + 12;
-                    endY = startY + 1;
-                    break;
-                case RequestMovementPacket.Types.MovementType.LEFT:
-                    endX = startX;
-                    startX--;
-                    break;
-                case RequestMovementPacket.Types.MovementType.RIGHT:
-                    startX = client.Player.Position.X + 18;
-                    endX = startX + 1;
-                    break;
-                default:
-                    break;
-            }
-            if (startX < 0)
-            {
-                startX = 0;
-            }
-            if (startY < 0)
-            {
-                startY = 0;
-            }
+            return PlayerDescription.CreateBuilder()
+                .SetPlayerGuid(player.CreatureGuid.ToString("N"))
+                .SetName(player.Name)
+                .SetSpeed(player.Speed)
+                .SetPlayerPosition(Position.CreateBuilder()
+                .SetX(player.Position.X)
+                .SetY(player.Position.Y)
+                .SetZ(player.Position.Z)
+                .Build()).Build();
+        }
+
+        internal static MapSliceDescription GenSliceDesc(SliceInfo slice)
+        {
             MapSliceDescription.Builder mapSlice = MapSliceDescription.CreateBuilder()
-                .SetStartX(startX)
-                .SetEndX(endX)
-                .SetStartY(startY)
-                .SetEndY(endY);
-            for (int x = startX; x < endX + 1; x++)
+                .SetStartX(slice.startX)
+                .SetEndX(slice.endX)
+                .SetStartY(slice.startY)
+                .SetEndY(slice.endY);
+            for (int x = slice.startX; x < slice.endX + 1; x++)
             {
-                for (int y = startY; y < endY + 1; y++)
+                for (int y = slice.startY; y < slice.endY + 1; y++)
                 {
-                    Tile tile = client.Player.Area.Terrain.GetTile(x, y);
+                    Tile tile = slice.area.Terrain.GetTile(x, y);
                     TileDescription.Builder tileDesc = TileDescription.CreateBuilder();
                     tileDesc.SetGroundId(tile.Ground.Id);
                     foreach (Item item in tile.Items)
@@ -139,11 +110,106 @@ namespace JangadaTileServer.Network
                 }
             }
 
-            Console.WriteLine("nX: " + client.Player.Position.X.ToString() + " - nY: " + client.Player.Position.Y.ToString());
-            playerMovePacket.SetMapSlice(mapSlice.Build());
+            return mapSlice.Build();
+        }
+
+        internal class SliceInfo
+        {
+            public int startX { get; set; }
+            public int endX { get; set; }
+            public int startY { get; set; }
+            public int endY { get; set; }
+            public Area area { get; set; }
+        }
+
+        internal static SliceInfo GenSliceInfo(Player player, RequestMovementPacket.Types.MovementType type)
+        {
+            SliceInfo slice = new SliceInfo();
+            slice.area = player.Area;
+            slice.startX = player.Position.X - 19;
+            slice.endX = player.Position.X + 19;
+            slice.startY = player.Position.Y - 13;
+            slice.endY = player.Position.Y + 13;
+            switch (type)
+            {
+                case RequestMovementPacket.Types.MovementType.UP:
+                    slice.endY = slice.startY;
+                    slice.startY--;
+                    break;
+                case RequestMovementPacket.Types.MovementType.DOWN:
+                    slice.startY = player.Position.Y + 12;
+                    slice.endY = slice.startY + 1;
+                    break;
+                case RequestMovementPacket.Types.MovementType.LEFT:
+                    slice.endX = slice.startX;
+                    slice.startX--;
+                    break;
+                case RequestMovementPacket.Types.MovementType.RIGHT:
+                    slice.startX = player.Position.X + 18;
+                    slice.endX = slice.startX + 1;
+                    break;
+                default:
+                    break;
+            }
+            if (slice.startX < 0)
+            {
+                slice.startX = 0;
+            }
+            if (slice.startY < 0)
+            {
+                slice.startY = 0;
+            }
+            return slice;
+        }
+
+        internal static void SendPlayerMove(JWebClient client, RequestMovementPacket.Types.MovementType movementType)
+        {
+            PlayerMovementPacket.Builder playerMovePacket = PlayerMovementPacket.CreateBuilder()
+                .SetNewPosition(Position.CreateBuilder()
+                .SetX(client.Player.Position.X)
+                .SetY(client.Player.Position.Y)
+                .SetZ(client.Player.Position.Z)
+                .Build());
+            
+            
+            playerMovePacket.SetMapSlice(GenSliceDesc(GenSliceInfo(client.Player, movementType)));
             Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
             newMessage.PlayerMovementPacket = playerMovePacket.Build();
             newMessage.Type = Networkmessage.Types.Type.PLAYER_MOVEMENT;
+            Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
+            Send(messagesToSend, client);
+        }
+
+        internal static void SendPlayerLogin(JWebClient client, Player player)
+        {
+            PlayerLoginPacket playerLogin = PlayerLoginPacket.CreateBuilder()
+                .SetPlayer(GenPlayerDesc(player)).Build();
+
+            Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
+            newMessage.PlayerLoginPacket = playerLogin;
+            newMessage.Type = Networkmessage.Types.Type.PLAYER_LOGIN;
+            Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
+            Send(messagesToSend, client);
+        }
+
+
+        internal static void SendCreatureMove(JWebClient client, Player player)
+        {
+            CharacterMovementPacket charMovement = CharacterMovementPacket.CreateBuilder()
+                .SetPlayer(GenPlayerDesc(player)).Build();
+
+            Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
+            newMessage.CharacterMovementPacket = charMovement;
+            newMessage.Type = Networkmessage.Types.Type.CHARACTER_MOVEMENT;;
+            Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
+            Send(messagesToSend, client);
+        }
+
+        internal static void SendInitialPacket(JWebClient client)
+        {
+            Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
+            newMessage.AreaDescriptionPacket = GenAreaDescription(client);
+            newMessage.Type = Networkmessage.Types.Type.AREA_DESCRIPTION;
             Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
             Send(messagesToSend, client);
         }

@@ -11,10 +11,11 @@ namespace JangadaTileServer.Content.Creatures
     {
         public JWebClient Client { get; set; }
 
-        public Player(int id, Utils.Position position)
+        public Player(int id, Utils.Position position, JWebClient client)
             : base(id)
         {
             this.Position = position;
+            this.Client = client;
         }
     }
 }

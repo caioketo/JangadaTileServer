@@ -12,6 +12,7 @@ namespace JangadaTileServer.Content.Creatures
     {
         public int CreatureId { get; set; }
         public Guid CreatureGuid { get; set; }
+        public string Name { get; set; }
         public Utils.Position Position { get; set; }
         public int Direction { get; set; }
         public Area Area { get; set; }
@@ -20,10 +21,21 @@ namespace JangadaTileServer.Content.Creatures
         public int Mana { get; set; }
         public List<Skills> Skills { get; set; }
 
+        public int Speed
+        {
+            get
+            {
+                return (this.Stats.Get(Stats.STAT.DEX));
+            }
+        }
+
         public Creature(int creatureId)
         {
             this.CreatureId = creatureId;
+            this.CreatureGuid = Util.GenGuid();
             this.Skills = new List<Skills>();
+            this.Stats = new Stats();
+            this.Name = "Keto";
         }
 
         public bool IsVisible(Utils.Position position)

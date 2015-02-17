@@ -32,9 +32,17 @@ namespace JangadaTileServer.Content
 
         internal void OnPlayerLogin(Network.JWebClient client)
         {
-            client.Player = new Creatures.Player(1, new Utils.Position(40, 40, 1));
-            client.Player.Area = this.Areas[0];
-            MessageHelper.SendAreaDescription(client, this.Areas[0]);
+            client.Player = new Creatures.Player(1, new Utils.Position(40, 40, 1), client);
+            this.Areas[0].AddPlayer(client.Player);
+            MessageHelper.SendInitialPacket(client);
+
+            foreach (Player player in client.Player.Area.PlayersInViewArea(client.Player.Position))
+            {
+                if (player.CreatureGuid != client.Player.CreatureGuid)
+                {
+                    MessageHelper.SendPlayerLogin(player.Client, client.Player);
+                }
+            }
         }
 
 
@@ -70,7 +78,10 @@ namespace JangadaTileServer.Content
             MessageHelper.SendPlayerMove(client, movementType);
             foreach (Player player in client.Player.Area.PlayersInViewArea(newPos))
             {
-                //MessageHelper.SendCreatureMove(player.Client, newPos);
+                if (player.CreatureGuid != client.Player.CreatureGuid)
+                {
+                    MessageHelper.SendCreatureMove(player.Client, client.Player);
+                }
             }
         }
     }

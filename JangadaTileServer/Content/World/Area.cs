@@ -39,5 +39,11 @@ namespace JangadaTileServer.Content.World
 
             return players;
         }
+
+        internal void AddPlayer(Player player)
+        {
+            player.Area = this;
+            Players.Add(player);
+        }
     }
 }

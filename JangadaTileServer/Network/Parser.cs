@@ -15,8 +15,6 @@ namespace JangadaTileServer.Network
             switch (type)
             {
                 case Networkmessage.Types.Type.LOGIN:
-                    Console.WriteLine("Login: " + message.LoginPacket.Login);
-                    Console.WriteLine("Password: " + message.LoginPacket.Password);
                     List<Character> chars = new List<Character>();
                     chars.Add(Character.CreateBuilder()
                         .SetId(1)
@@ -32,11 +30,9 @@ namespace JangadaTileServer.Network
                     break;
                 case Networkmessage.Types.Type.SELECTEDCHAR:
                     Game.GetInstance().OnPlayerLogin(client);
-                    Console.WriteLine("Selected char id = " + message.SelectCharacterPacket.Id.ToString());
                     break;
                 case Networkmessage.Types.Type.REQUEST_MOVEMENT:
                     Game.GetInstance().OnPlayerMove(client, message.RequestMovementPacket.MovementType);
-                    Console.WriteLine("Request Move: " + message.RequestMovementPacket.MovementType.ToString());
                     break;
                 default:
                     break;

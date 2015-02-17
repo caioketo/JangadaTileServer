@@ -52,7 +52,6 @@ namespace JangadaTileServer
 
         public static void OnReceive(UserContext context)
         {
-            Console.WriteLine("Received Data From :" + context.ClientAddress);
             try
             {
                 Messages messages = Messages.CreateBuilder().MergeFrom(
@@ -73,7 +72,6 @@ namespace JangadaTileServer
 
         public static void OnSend(UserContext context)
         {
-            Console.WriteLine("Data Send To : " + context.ClientAddress);
         }
 
 
