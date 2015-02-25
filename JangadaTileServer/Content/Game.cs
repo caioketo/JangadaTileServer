@@ -48,39 +48,21 @@ namespace JangadaTileServer.Content
 
         internal void OnPlayerMove(JWebClient client, RequestMovementPacket.Types.MovementType movementType)
         {
-            Utils.Position newPos = client.Player.Position;
-            switch (movementType)
+            client.Player.Walk(movementType);
+        }
+
+        internal void CreatureMoved(Creature creature)
+        {
+            if (creature is Player)
             {
-                case RequestMovementPacket.Types.MovementType.UP:
-                    newPos.Y--;
-                    break;
-                case RequestMovementPacket.Types.MovementType.DOWN:
-                    newPos.Y++;
-                    break;
-                case RequestMovementPacket.Types.MovementType.LEFT:
-                    newPos.X--;
-                    break;
-                case RequestMovementPacket.Types.MovementType.RIGHT:
-                    newPos.X++;
-                    break;
-                default:
-                    break;
-            }
-            if (newPos.X < 0)
-            {
-                newPos.X = 0;
-            }
-            if (newPos.Y < 0)
-            {
-                newPos.Y = 0;
-            }
-            client.Player.Position = newPos;
-            MessageHelper.SendPlayerMove(client, movementType);
-            foreach (Player player in client.Player.Area.PlayersInViewArea(newPos))
-            {
-                if (player.CreatureGuid != client.Player.CreatureGuid)
+                MessageHelper.SendPlayerMove(((Player)creature).Client);
+
+                foreach (Player player in creature.Area.PlayersInViewArea(creature.Position))
                 {
-                    MessageHelper.SendCreatureMove(player.Client, client.Player);
+                    if (player.CreatureGuid != creature.CreatureGuid)
+                    {
+                        MessageHelper.SendCreatureMove(player.Client, (Player)creature);
+                    }
                 }
             }
         }

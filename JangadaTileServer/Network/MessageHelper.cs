@@ -162,7 +162,7 @@ namespace JangadaTileServer.Network
             return slice;
         }
 
-        internal static void SendPlayerMove(JWebClient client, RequestMovementPacket.Types.MovementType movementType)
+        internal static void SendPlayerMove(JWebClient client)
         {
             PlayerMovementPacket.Builder playerMovePacket = PlayerMovementPacket.CreateBuilder()
                 .SetNewPosition(Position.CreateBuilder()
@@ -170,9 +170,9 @@ namespace JangadaTileServer.Network
                 .SetY(client.Player.Position.Y)
                 .SetZ(client.Player.Position.Z)
                 .Build());
-            
-            
-            playerMovePacket.SetMapSlice(GenSliceDesc(GenSliceInfo(client.Player, movementType)));
+
+
+            playerMovePacket.SetMapSlice(GenSliceDesc(GenSliceInfo(client.Player, client.Player.LastMoveType)));
             Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
             newMessage.PlayerMovementPacket = playerMovePacket.Build();
             newMessage.Type = Networkmessage.Types.Type.PLAYER_MOVEMENT;
