@@ -213,5 +213,10 @@ namespace JangadaTileServer.Network
             Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
             Send(messagesToSend, client);
         }
+
+        internal static void SendCreatureRespawn(JWebClient jWebClient, Creature creature)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

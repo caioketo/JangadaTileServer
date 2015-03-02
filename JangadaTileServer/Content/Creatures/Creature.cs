@@ -40,6 +40,16 @@ namespace JangadaTileServer.Content.Creatures
             this.Name = "Keto";
         }
 
+        public Creature(int creatureId, Utils.Position position)
+        {
+            this.CreatureId = creatureId;
+            this.CreatureGuid = Util.GenGuid();
+            this.Skills = new List<Skills>();
+            this.Stats = new Stats();
+            this.Name = "Keto";
+            this.Position = position;
+        }
+
         public bool IsVisible(Utils.Position position)
         {
             return (position.X >= this.Position.X - 19 && position.X <= this.Position.X + 19 &&

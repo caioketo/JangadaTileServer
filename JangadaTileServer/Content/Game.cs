@@ -12,7 +12,7 @@ namespace JangadaTileServer.Content
     class Game
     {
         public List<Area> Areas { get; set; }
-
+        List<Respawn> Respawns = new List<Respawn>();
         private static Game instance;
         public static Game GetInstance()
         {
@@ -28,6 +28,24 @@ namespace JangadaTileServer.Content
             this.Areas = new List<Area>();
             instance = this;
             this.Areas.Add(new Area(1));
+            LoadRespawns();
+        }
+
+        private void LoadRespawns()
+        {
+            //LOAD FROM FILE
+            Respawn resp = new Respawn();
+            resp.AreaId = 1;
+            resp.CreaturesIdToRespawn.Add(1);
+            resp.CreaturesQtyToRespawn.Add(5);
+            resp.Q1 = new Utils.Position(1, 2, 1);
+            resp.Q2 = new Utils.Position(10, 6, 1);
+            resp.RespawnTime = 10000;
+            Respawns.Add(resp);
+            foreach (Respawn respawn in Respawns)
+            {
+                respawn.Run();
+            }
         }
 
         internal void OnPlayerLogin(Network.JWebClient client)
@@ -64,6 +82,26 @@ namespace JangadaTileServer.Content
                         MessageHelper.SendCreatureMove(player.Client, (Player)creature);
                     }
                 }
+            }
+        }
+
+        internal Area GetArea(int AreaId)
+        {
+            foreach (Area area in Areas)
+            {
+                if (area.Id == AreaId)
+                {
+                    return area;
+                }
+            }
+            return null;
+        }
+
+        internal void OnAddCreature(Area area, Creature creature)
+        {
+            foreach (Player player in area.GetPlayers())
+            {
+                MessageHelper.SendCreatureRespawn(player.Client, creature);
             }
         }
     }

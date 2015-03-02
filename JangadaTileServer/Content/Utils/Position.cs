@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JangadaTileServer.Content.Utils
 {
-    class Position
+    public class Position
     {
 
         public Position(int x, int y, int z)

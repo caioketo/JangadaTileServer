@@ -15,6 +15,11 @@ namespace JangadaTileServer.Content.World
         public List<Creature> Creatures { get; set; }
         public List<Player> Players { get; set; }
 
+        public List<Player> GetPlayers()
+        {
+            return Players;
+        }
+
         public Area(int id)
         {
             this.Id = id;
@@ -44,6 +49,30 @@ namespace JangadaTileServer.Content.World
         {
             player.Area = this;
             Players.Add(player);
+        }
+
+
+        public int GetCreaturesCountInArea(int creatureId, Utils.Position Q1, Utils.Position Q2)
+        {
+            int count = 0;
+            foreach (Creature creature in Creatures)
+            {
+                if (creature.CreatureId == creatureId &&
+                    ((creature.Position.X >= Q1.X && creature.Position.X <= Q2.X) &&
+                    (creature.Position.Y >= Q1.Y && creature.Position.Y <= Q2.Y)))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        public void AddCreature(Creature creature)
+        {
+            creature.Area = this;
+            Creatures.Add(creature);
+            Game.GetInstance().OnAddCreature(this, creature);
         }
     }
 }

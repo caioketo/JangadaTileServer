@@ -59,6 +59,7 @@
     <Compile Include="Content\Creatures\Creature.cs" />
     <Compile Include="Content\Creatures\Player.cs" />
     <Compile Include="Content\Item.cs" />
+    <Compile Include="Content\World\Respawn.cs" />
     <Compile Include="Content\World\Terrain.cs" />
     <Compile Include="Content\Utils\Position.cs" />
     <Compile Include="Content\Utils\Skills.cs" />
