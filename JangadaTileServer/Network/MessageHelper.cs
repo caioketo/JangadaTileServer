@@ -214,9 +214,29 @@ namespace JangadaTileServer.Network
             Send(messagesToSend, client);
         }
 
-        internal static void SendCreatureRespawn(JWebClient jWebClient, Creature creature)
+        internal static CreatureDescription GenCreatureDesc(Creature creature)
         {
-            throw new NotImplementedException();
+            return CreatureDescription.CreateBuilder()
+                .SetCreatureGuid(creature.CreatureGuid.ToString("N"))
+                .SetCreaturePosition(Position.CreateBuilder()
+                .SetX(creature.Position.X)
+                .SetY(creature.Position.Y)
+                .SetZ(creature.Position.Z)
+                .Build())
+                .SetTextId(creature.CreatureId)
+                .Build();
+        }
+
+        internal static void SendCreatureRespawn(JWebClient client, Creature creature)
+        {
+            Messages messagesToSend = Messages.CreateBuilder()
+                .AddNetworkmessage(Networkmessage.CreateBuilder()
+                .SetType(Networkmessage.Types.Type.CREATURE_RESPAWN)
+                .SetCreatureRespawnPacket(CreatureRespawnPacket.CreateBuilder()
+                .SetCreatureDescription(GenCreatureDesc(creature))
+                .Build())
+                .Build()).Build();
+            Send(messagesToSend, client);
         }
     }
 }

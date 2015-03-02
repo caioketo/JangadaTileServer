@@ -95,5 +95,25 @@ namespace JangadaTileServer.Content.Creatures
                 Game.GetInstance().CreatureMoved(this);
             });
         }
+
+        public void CastSkill(int SkillId)
+        {
+            //TODO CAST SKILL TESTAR LUA FUNCTIONS
+            Skills skillToCast = null;
+            foreach (Skills skill in this.Skills)
+            {
+                if (skill.Id == SkillId)
+                {
+                    skillToCast = skill;
+                }
+            }
+            if (skillToCast == null)
+            {
+                return;
+            }
+
+            var result = skillToCast.Cast.Call(this).First();
+        }
+
     }
 }
