@@ -15,6 +15,15 @@ namespace JangadaTileServer.Content.Utils
         public float CoolDown { get; set; }
         public float Distance { get; set; }
         public bool AutoCast { get; set; }
-        public LuaFunction Cast { get; set; }
+        public string ScriptName { get; set; }
+        public Lua CastState { get; set; }
+        public LuaFunction CastFunction { get; set; }
+
+        public Skills(int id)
+        {
+            this.Id = id;
+            this.ScriptName = "teste" + id.ToString() + ".lua";
+            Scripting.ScriptManager.GetInstance().LoadSkill(this);
+        }
     }
 }

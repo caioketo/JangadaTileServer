@@ -11,3 +11,5 @@ C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\Jan
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\obj\Debug\JangadaTileServer.pdb
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\KeraLua.dll
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\NLua.dll

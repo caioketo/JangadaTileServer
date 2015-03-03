@@ -1,4 +1,5 @@
-﻿using JangadaTileServer.Content.Utils;
+﻿using JangadaTileServer.Content.Scripting;
+using JangadaTileServer.Content.Utils;
 using JangadaTileServer.Content.World;
 using System;
 using System.Collections.Generic;
@@ -111,8 +112,7 @@ namespace JangadaTileServer.Content.Creatures
             {
                 return;
             }
-
-            var result = skillToCast.Cast.Call(this).First();
+            ScriptManager.GetInstance().ExecuteScript(skillToCast.CastFunction, this);
         }
 
     }

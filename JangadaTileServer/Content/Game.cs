@@ -46,6 +46,8 @@ namespace JangadaTileServer.Content
             {
                 respawn.Run();
             }
+            new Utils.Skills(1);
+            new Utils.Skills(2);
         }
 
         internal void OnPlayerLogin(Network.JWebClient client)
