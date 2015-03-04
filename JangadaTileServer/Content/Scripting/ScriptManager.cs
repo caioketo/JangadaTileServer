@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace JangadaTileServer.Content.Scripting
@@ -44,11 +45,28 @@ namespace JangadaTileServer.Content.Scripting
             state["scriptManager"] = this;
         }
 
+        public void AddTask(int interval, LuaFunction function, params object[] args)
+        {
+            Console.WriteLine("AddTask");
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(interval);
+                if (args == null)
+                {
+                    Console.WriteLine(function.Call().First());
+                }
+                else
+                {
+                    Console.WriteLine(function.Call(args).First());
+                }
+            });
+        }
+
         public void LoadSkill(Skills skill)
         {
-            state.DoFile(Path() + @"\Scripts\" + skill.ScriptName);
+            state.DoFile(Path() + @"\Content\Scripting\Scripts\" + skill.ScriptName);
             skill.CastFunction = state["Cast"] as LuaFunction;
-            var r = skill.CastFunction.Call().First();
+            var r = skill.CastFunction.Call(new Content.Creatures.Creature(1)).First();
         }
     }
 }
