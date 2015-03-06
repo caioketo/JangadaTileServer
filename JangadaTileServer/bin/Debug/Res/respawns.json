@@ -1,0 +1,26 @@
+﻿{
+    "count": 10,
+    "respawns": [
+        {
+            "areaId": 1,
+            "creaturesCount": 1,
+            "creatures": [
+                {
+                    "id": 1,
+                    "qty": 1
+                }
+            ],
+            "q1": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            },
+            "q2": {
+                "x": 5,
+                "y": 5,
+                "z": 1
+            },
+            "respawnTime": 1000
+        }
+    ]
+}

@@ -26,45 +26,9 @@ namespace JangadaTileServer.Content.World
         public Terrain(int id)
         {
             this.Id = id;
-            LoadTerrain();
+            Util.LoadTerrain(this);
         }
 
-
-        private void LoadTerrain()
-        {
-            //LOAD FROM FILE
-            using (FileStream sr = File.OpenRead(@"c:\Users\Caio\Desktop\teste.json"))
-            {
-                using (JsonTextReader reader = new JsonTextReader(new StreamReader(sr)))
-                {
-                    dynamic terrain = JToken.ReadFrom(reader);
-                    this.Width = terrain.width;
-                    this.Height = terrain.height;
-                    this.Tiles = new Tile[this.Width, this.Height];
-                    dynamic layer1 = terrain.layers[0];
-                    int x = 0;
-                    int y = 0;
-                    for (int i = 0; i < this.Width * this.Height; i++)
-                    {
-                        if (x == this.Width)
-                        {
-                            x = 0;
-                            y++;
-                        }
-                        this.Tiles[x, y] = new Tile(new Utils.Position(x, y, 1));
-                        if (x == 60 && y == 40)
-                        {
-                            this.Tiles[x, y].Ground = new Item(170);
-                        }
-                        else
-                        {
-                            this.Tiles[x, y].Ground = new Item((int)layer1.data[i]);
-                        }
-                        x++;
-                    }
-                }
-            }
-        }
 
         public Tile GetTile(int x, int y)
         {

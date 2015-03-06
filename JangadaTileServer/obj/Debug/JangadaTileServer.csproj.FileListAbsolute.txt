@@ -13,5 +13,7 @@ C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\New
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\KeraLua.dll
 C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\NLua.dll
-C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Content\Scripting\Scripts\teste1.lua
-C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Content\Scripting\Scripts\teste2.lua
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Res\Scripts\teste1.lua
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Res\Scripts\teste2.lua
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Res\Terrains\1.json
+C:\Users\Caio\Documents\GitHub\JangadaTileServer\JangadaTileServer\bin\Debug\Res\respawns.json

@@ -64,7 +64,7 @@ namespace JangadaTileServer.Content.Scripting
 
         public void LoadSkill(Skills skill)
         {
-            state.DoFile(Path() + @"\Content\Scripting\Scripts\" + skill.ScriptName);
+            state.DoFile(Util.PathRes(Util.RES_TYPE.SCRIPT) + skill.ScriptName);
             skill.CastFunction = state["Cast"] as LuaFunction;
             var r = skill.CastFunction.Call(new Content.Creatures.Creature(1)).First();
         }

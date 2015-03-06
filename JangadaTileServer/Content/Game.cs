@@ -34,14 +34,15 @@ namespace JangadaTileServer.Content
         private void LoadRespawns()
         {
             //LOAD FROM FILE
-            Respawn resp = new Respawn();
+            /*Respawn resp = new Respawn();
             resp.AreaId = 1;
             resp.CreaturesIdToRespawn.Add(1);
             resp.CreaturesQtyToRespawn.Add(5);
             resp.Q1 = new Utils.Position(1, 2, 1);
             resp.Q2 = new Utils.Position(10, 6, 1);
             resp.RespawnTime = 10000;
-            Respawns.Add(resp);
+            Respawns.Add(resp);*/
+            Respawns = Util.LoadRespawns();
             foreach (Respawn respawn in Respawns)
             {
                 respawn.Run();
