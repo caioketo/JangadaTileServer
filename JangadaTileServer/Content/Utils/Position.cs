@@ -8,7 +8,12 @@ namespace JangadaTileServer.Content.Utils
 {
     public class Position
     {
-
+        public Position(Position pos)
+        {
+            this.X = pos.X;
+            this.Y = pos.Y;
+            this.Z = pos.Z;
+        }
         public Position(int x, int y, int z)
         {
             this.X = x;

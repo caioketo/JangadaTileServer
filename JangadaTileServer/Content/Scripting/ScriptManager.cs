@@ -41,8 +41,8 @@ namespace JangadaTileServer.Content.Scripting
 
         public void LoadScripts()
         {
-            state = new Lua();
-            state["scriptManager"] = this;
+            //state = new Lua();
+            //state["scriptManager"] = this;
         }
 
         public void AddTask(int interval, LuaFunction function, params object[] args)
@@ -64,9 +64,9 @@ namespace JangadaTileServer.Content.Scripting
 
         public void LoadSkill(Skills skill)
         {
-            state.DoFile(Util.PathRes(Util.RES_TYPE.SCRIPT) + skill.ScriptName);
-            skill.CastFunction = state["Cast"] as LuaFunction;
-            var r = skill.CastFunction.Call(new Content.Creatures.Creature(1)).First();
+            //state.DoFile(Util.PathRes(Util.RES_TYPE.SCRIPT) + skill.ScriptName);
+            //skill.CastFunction = state["Cast"] as LuaFunction;
+            //var r = skill.CastFunction.Call(new Content.Creatures.Creature(1)).First();
         }
     }
 }

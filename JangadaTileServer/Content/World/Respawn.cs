@@ -59,7 +59,7 @@ namespace JangadaTileServer.Content.World
 
         int NextInt(int min, int max)
         {
-            return (min + (random.Next() * (max - min)));
+            return random.Next(min, max);
         }
 
         internal Utils.Position RandomPosition()
@@ -71,9 +71,12 @@ namespace JangadaTileServer.Content.World
 
         public void Run()
         {
-            Timer timer = new Timer(RespawnTime);
-            timer.Elapsed += timer_Elapsed;
-            timer.Start();
+            if (RespawnTime > 0)
+            {
+                Timer timer = new Timer(RespawnTime);
+                timer.Elapsed += timer_Elapsed;
+                timer.Start();
+            } 
         }
     }
 }

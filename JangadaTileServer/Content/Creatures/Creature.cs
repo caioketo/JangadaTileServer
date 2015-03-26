@@ -1,6 +1,7 @@
 ﻿using JangadaTileServer.Content.Scripting;
 using JangadaTileServer.Content.Utils;
 using JangadaTileServer.Content.World;
+using JangadaTileServer.Network;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,7 +62,9 @@ namespace JangadaTileServer.Content.Creatures
         public void Walk(RequestMovementPacket.Types.MovementType movementType)
         {
             this.LastMoveType = movementType;
-            Utils.Position newPos = this.Position;
+            Utils.Position newPos = new Utils.Position(this.Position);
+            
+
             switch (movementType)
             {
                 case RequestMovementPacket.Types.MovementType.UP:
@@ -88,13 +91,21 @@ namespace JangadaTileServer.Content.Creatures
                 newPos.Y = 0;
             }
 
-            int interval = 5000;
-            Task.Factory.StartNew(() =>
+            if (this.Area.CreatureInPos(newPos) && this is Player)
             {
-                Thread.Sleep(interval);
-                this.Position = newPos;
-                Game.GetInstance().CreatureMoved(this);
-            });
+                MessageHelper.SendNotPossible((Player)this);
+                return;
+            }
+            this.Position = newPos;
+            Game.GetInstance().CreatureMoved(this);
+
+            int interval = 5000;
+            //Task.Factory.StartNew(() =>
+            //{
+                //Thread.Sleep(interval);
+                //this.Position = newPos;
+                //Game.GetInstance().CreatureMoved(this);
+            //});
         }
 
         public void CastSkill(int SkillId)

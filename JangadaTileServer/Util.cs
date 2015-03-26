@@ -92,7 +92,6 @@ namespace JangadaTileServer
                     int respCount = respawns.count;
                     for (int r = 0; r < respCount; r++)
                     {
-                        Respawn respawn = new Respawn();
                         dynamic respawnJSON = respawns.respawns[r];
 
                         Respawn resp = new Respawn();
@@ -115,7 +114,7 @@ namespace JangadaTileServer
                         resp.Q2 = new JangadaTileServer.Content.Utils.Position(q2x, q2y, q2z);
                         resp.RespawnTime = respawnJSON.respawnTime;
 
-                        Respawns.Add(respawn);
+                        Respawns.Add(resp);
                     }
                 }
             }

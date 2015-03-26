@@ -238,5 +238,15 @@ namespace JangadaTileServer.Network
                 .Build()).Build();
             Send(messagesToSend, client);
         }
+
+        internal static void SendNotPossible(Player player)
+        {
+            Messages messagesToSend = Messages.CreateBuilder()
+                .AddNetworkmessage(Networkmessage.CreateBuilder()
+                .SetType(Networkmessage.Types.Type.NOT_POSSIBLE)
+                .Build()).Build();
+
+            Send(messagesToSend, player.Client);
+        }
     }
 }

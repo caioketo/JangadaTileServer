@@ -74,5 +74,26 @@ namespace JangadaTileServer.Content.World
             Creatures.Add(creature);
             Game.GetInstance().OnAddCreature(this, creature);
         }
+
+        public bool CreatureInPos(Utils.Position pos)
+        {
+            foreach (Creature creature in Creatures)
+            {
+                if (creature.Position.X == pos.X && creature.Position.Y <= pos.Y)
+                {
+                    return true;
+                }
+            }
+
+            foreach (Player player in Players)
+            {
+                if (player.Position.X == pos.X && player.Position.Y == pos.Y)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
