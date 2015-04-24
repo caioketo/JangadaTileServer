@@ -52,6 +52,8 @@ namespace Proto {
     internal static pb::FieldAccess.FieldAccessorTable<global::MapSliceDescription, global::MapSliceDescription.Builder> internal__static_MapSliceDescription__FieldAccessorTable;
     internal static pbd::MessageDescriptor internal__static_CharacterMovementPacket__Descriptor;
     internal static pb::FieldAccess.FieldAccessorTable<global::CharacterMovementPacket, global::CharacterMovementPacket.Builder> internal__static_CharacterMovementPacket__FieldAccessorTable;
+    internal static pbd::MessageDescriptor internal__static_CreatureMovementPacket__Descriptor;
+    internal static pb::FieldAccess.FieldAccessorTable<global::CreatureMovementPacket, global::CreatureMovementPacket.Builder> internal__static_CreatureMovementPacket__FieldAccessorTable;
     internal static pbd::MessageDescriptor internal__static_Messages__Descriptor;
     internal static pb::FieldAccess.FieldAccessorTable<global::Messages, global::Messages.Builder> internal__static_Messages__FieldAccessorTable;
     internal static pbd::MessageDescriptor internal__static_PlayerLogoutPacket__Descriptor;
@@ -65,7 +67,7 @@ namespace Proto {
     
     static Networkmessage() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
-          "ChhyZXMvTmV0d29ya21lc3NhZ2UucHJvdG8ijAYKDk5ldHdvcmttZXNzYWdl" + 
+          "ChhyZXMvTmV0d29ya21lc3NhZ2UucHJvdG8i3AYKDk5ldHdvcmttZXNzYWdl" + 
           "EiIKBHR5cGUYASACKA4yFC5OZXR3b3JrbWVzc2FnZS5UeXBlEiEKC2xvZ2lu" + 
           "UGFja2V0GAIgASgLMgwuTG9naW5QYWNrZXQSKwoQY2hhcmFjdGVyc1BhY2tl" + 
           "dBgDIAEoCzIRLkNoYXJhY3RlcnNQYWNrZXQSNQoVc2VsZWN0Q2hhcmFjdGVy" + 
@@ -78,53 +80,57 @@ namespace Proto {
           "a2V0GAkgASgLMhguQ2hhcmFjdGVyTW92ZW1lbnRQYWNrZXQSLwoScGxheWVy" + 
           "TG9nb3V0UGFja2V0GAogASgLMhMuUGxheWVyTG9nb3V0UGFja2V0EjUKFWNy" + 
           "ZWF0dXJlUmVzcGF3blBhY2tldBgLIAEoCzIWLkNyZWF0dXJlUmVzcGF3blBh" + 
-          "Y2tldCLZAQoEVHlwZRIJCgVMT0dJThAAEg4KCkNIQVJBQ1RFUlMQARIQCgxT" + 
-          "RUxFQ1RFRENIQVIQAhIUChBBUkVBX0RFU0NSSVBUSU9OEAMSFAoQUkVRVUVT" + 
-          "VF9NT1ZFTUVOVBAEEhMKD1BMQVlFUl9NT1ZFTUVOVBAFEhAKDFBMQVlFUl9M" + 
-          "T0dJThAGEhYKEkNIQVJBQ1RFUl9NT1ZFTUVOVBAHEhEKDVBMQVlFUl9MT0dP" + 
-          "VVQQCBIUChBDUkVBVFVSRV9SRVNQQVdOEAkSEAoMTk9UX1BPU1NJQkxFEAoi" + 
-          "LgoLTG9naW5QYWNrZXQSDQoFbG9naW4YASACKAkSEAoIcGFzc3dvcmQYAiAC" + 
-          "KAkiMwoJQ2hhcmFjdGVyEgoKAmlkGAEgAigFEgwKBG5hbWUYAiACKAkSDAoE" + 
-          "aW5mbxgDIAIoCSI1ChBDaGFyYWN0ZXJzUGFja2V0EiEKDUNoYXJhY3Rlckxp" + 
-          "c3QYASADKAsyCi5DaGFyYWN0ZXIiIwoVU2VsZWN0Q2hhcmFjdGVyUGFja2V0" + 
-          "EgoKAmlkGAEgAigFIisKCFBvc2l0aW9uEgkKAXgYASACKAUSCQoBeRgCIAIo" + 
-          "BRIJCgF6GAMgAigFIokBChVSZXF1ZXN0TW92ZW1lbnRQYWNrZXQSOQoMbW92" + 
-          "ZW1lbnRUeXBlGAEgAigOMiMuUmVxdWVzdE1vdmVtZW50UGFja2V0Lk1vdmVt" + 
-          "ZW50VHlwZSI1CgxNb3ZlbWVudFR5cGUSBgoCVVAQARIICgRET1dOEAISCAoE" + 
-          "TEVGVBADEgkKBVJJR0hUEAQi+QEKFUFyZWFEZXNjcmlwdGlvblBhY2tldBIO" + 
-          "CgZhcmVhSWQYASACKAUSDQoFd2lkdGgYAiACKAUSDgoGaGVpZ2h0GAMgAigF" + 
-          "Eg4KBnN0YXJ0WBgEIAIoBRIOCgZzdGFydFkYBSACKAUSHwoFdGlsZXMYBiAD" + 
-          "KAsyEC5UaWxlRGVzY3JpcHRpb24SIgoGcGxheWVyGAcgAigLMhIuUGxheWVy" + 
-          "RGVzY3JpcHRpb24SIwoHcGxheWVycxgIIAMoCzISLlBsYXllckRlc2NyaXB0" + 
-          "aW9uEicKCWNyZWF0dXJlcxgJIAMoCzIULkNyZWF0dXJlRGVzY3JpcHRpb24i" + 
-          "MgoPVGlsZURlc2NyaXB0aW9uEhAKCGdyb3VuZElkGAEgAigFEg0KBWl0ZW1z" + 
-          "GAIgAygFIkoKFUNyZWF0dXJlUmVzcGF3blBhY2tldBIxChNjcmVhdHVyZURl" + 
-          "c2NyaXB0aW9uGAEgAigLMhQuQ3JlYXR1cmVEZXNjcmlwdGlvbiJgChNDcmVh" + 
-          "dHVyZURlc2NyaXB0aW9uEhQKDGNyZWF0dXJlR3VpZBgBIAIoCRIOCgZ0ZXh0" + 
-          "SWQYAiACKAUSIwoQY3JlYXR1cmVQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9u" + 
-          "ImcKEVBsYXllckRlc2NyaXB0aW9uEhIKCnBsYXllckd1aWQYASACKAkSDAoE" + 
-          "bmFtZRgCIAIoCRIhCg5wbGF5ZXJQb3NpdGlvbhgDIAIoCzIJLlBvc2l0aW9u" + 
-          "Eg0KBXNwZWVkGAQgAigFImwKEFN0YXRzRGVzY3JpcHRpb24SDAoEQ09OUxgB" + 
-          "IAIoBRILCgNTVFIYAiACKAUSCwoDSU5UGAMgAigFEgsKA1dJUxgEIAIoBRIL" + 
-          "CgNERVgYBSACKAUSCgoCSFAYBiACKAUSCgoCTVAYByACKAUiagoRU2tpbGxz" + 
-          "RGVzY3JpcHRpb24SDAoETmFtZRgBIAIoCRIRCglUZXh0dXJlSWQYAiACKAUS" + 
-          "EAoIQ29vbERvd24YAyACKAISEAoIRGlzdGFuY2UYBCACKAISEAoIQXV0b0Nh" + 
-          "c3QYBSACKAgiNwoRUGxheWVyTG9naW5QYWNrZXQSIgoGcGxheWVyGAEgAigL" + 
-          "MhIuUGxheWVyRGVzY3JpcHRpb24iXgoUUGxheWVyTW92ZW1lbnRQYWNrZXQS" + 
-          "HgoLbmV3UG9zaXRpb24YASACKAsyCS5Qb3NpdGlvbhImCghtYXBTbGljZRgC" + 
-          "IAIoCzIULk1hcFNsaWNlRGVzY3JpcHRpb24icgoTTWFwU2xpY2VEZXNjcmlw" + 
-          "dGlvbhIOCgZzdGFydFgYASACKAUSDAoEZW5kWBgCIAIoBRIOCgZzdGFydFkY" + 
-          "AyACKAUSDAoEZW5kWRgEIAIoBRIfCgV0aWxlcxgFIAMoCzIQLlRpbGVEZXNj" + 
-          "cmlwdGlvbiI9ChdDaGFyYWN0ZXJNb3ZlbWVudFBhY2tldBIiCgZwbGF5ZXIY" + 
-          "ASACKAsyEi5QbGF5ZXJEZXNjcmlwdGlvbiIzCghNZXNzYWdlcxInCg5OZXR3" + 
-          "b3JrbWVzc2FnZRgBIAMoCzIPLk5ldHdvcmttZXNzYWdlIigKElBsYXllckxv" + 
-          "Z291dFBhY2tldBISCgpwbGF5ZXJHdWlkGAEgAigJ");
+          "Y2tldBI3ChZjcmVhdHVyZU1vdmVtZW50UGFja2V0GAwgASgLMhcuQ3JlYXR1" + 
+          "cmVNb3ZlbWVudFBhY2tldCLwAQoEVHlwZRIJCgVMT0dJThAAEg4KCkNIQVJB" + 
+          "Q1RFUlMQARIQCgxTRUxFQ1RFRENIQVIQAhIUChBBUkVBX0RFU0NSSVBUSU9O" + 
+          "EAMSFAoQUkVRVUVTVF9NT1ZFTUVOVBAEEhMKD1BMQVlFUl9NT1ZFTUVOVBAF" + 
+          "EhAKDFBMQVlFUl9MT0dJThAGEhYKEkNIQVJBQ1RFUl9NT1ZFTUVOVBAHEhEK" + 
+          "DVBMQVlFUl9MT0dPVVQQCBIUChBDUkVBVFVSRV9SRVNQQVdOEAkSEAoMTk9U" + 
+          "X1BPU1NJQkxFEAoSFQoRQ1JFQVRVUkVfTU9WRU1FTlQQCyIuCgtMb2dpblBh" + 
+          "Y2tldBINCgVsb2dpbhgBIAIoCRIQCghwYXNzd29yZBgCIAIoCSIzCglDaGFy" + 
+          "YWN0ZXISCgoCaWQYASACKAUSDAoEbmFtZRgCIAIoCRIMCgRpbmZvGAMgAigJ" + 
+          "IjUKEENoYXJhY3RlcnNQYWNrZXQSIQoNQ2hhcmFjdGVyTGlzdBgBIAMoCzIK" + 
+          "LkNoYXJhY3RlciIjChVTZWxlY3RDaGFyYWN0ZXJQYWNrZXQSCgoCaWQYASAC" + 
+          "KAUiKwoIUG9zaXRpb24SCQoBeBgBIAIoBRIJCgF5GAIgAigFEgkKAXoYAyAC" + 
+          "KAUiiQEKFVJlcXVlc3RNb3ZlbWVudFBhY2tldBI5Cgxtb3ZlbWVudFR5cGUY" + 
+          "ASACKA4yIy5SZXF1ZXN0TW92ZW1lbnRQYWNrZXQuTW92ZW1lbnRUeXBlIjUK" + 
+          "DE1vdmVtZW50VHlwZRIGCgJVUBABEggKBERPV04QAhIICgRMRUZUEAMSCQoF" + 
+          "UklHSFQQBCL5AQoVQXJlYURlc2NyaXB0aW9uUGFja2V0Eg4KBmFyZWFJZBgB" + 
+          "IAIoBRINCgV3aWR0aBgCIAIoBRIOCgZoZWlnaHQYAyACKAUSDgoGc3RhcnRY" + 
+          "GAQgAigFEg4KBnN0YXJ0WRgFIAIoBRIfCgV0aWxlcxgGIAMoCzIQLlRpbGVE" + 
+          "ZXNjcmlwdGlvbhIiCgZwbGF5ZXIYByACKAsyEi5QbGF5ZXJEZXNjcmlwdGlv" + 
+          "bhIjCgdwbGF5ZXJzGAggAygLMhIuUGxheWVyRGVzY3JpcHRpb24SJwoJY3Jl" + 
+          "YXR1cmVzGAkgAygLMhQuQ3JlYXR1cmVEZXNjcmlwdGlvbiIyCg9UaWxlRGVz" + 
+          "Y3JpcHRpb24SEAoIZ3JvdW5kSWQYASACKAUSDQoFaXRlbXMYAiADKAUiSgoV" + 
+          "Q3JlYXR1cmVSZXNwYXduUGFja2V0EjEKE2NyZWF0dXJlRGVzY3JpcHRpb24Y" + 
+          "ASACKAsyFC5DcmVhdHVyZURlc2NyaXB0aW9uIm4KE0NyZWF0dXJlRGVzY3Jp" + 
+          "cHRpb24SFAoMY3JlYXR1cmVHdWlkGAEgAigJEg4KBnRleHRJZBgCIAIoBRIj" + 
+          "ChBjcmVhdHVyZVBvc2l0aW9uGAMgAigLMgkuUG9zaXRpb24SDAoEbmFtZRgE" + 
+          "IAIoCSJnChFQbGF5ZXJEZXNjcmlwdGlvbhISCgpwbGF5ZXJHdWlkGAEgAigJ" + 
+          "EgwKBG5hbWUYAiACKAkSIQoOcGxheWVyUG9zaXRpb24YAyACKAsyCS5Qb3Np" + 
+          "dGlvbhINCgVzcGVlZBgEIAIoBSJsChBTdGF0c0Rlc2NyaXB0aW9uEgwKBENP" + 
+          "TlMYASACKAUSCwoDU1RSGAIgAigFEgsKA0lOVBgDIAIoBRILCgNXSVMYBCAC" + 
+          "KAUSCwoDREVYGAUgAigFEgoKAkhQGAYgAigFEgoKAk1QGAcgAigFImoKEVNr" + 
+          "aWxsc0Rlc2NyaXB0aW9uEgwKBE5hbWUYASACKAkSEQoJVGV4dHVyZUlkGAIg" + 
+          "AigFEhAKCENvb2xEb3duGAMgAigCEhAKCERpc3RhbmNlGAQgAigCEhAKCEF1" + 
+          "dG9DYXN0GAUgAigIIjcKEVBsYXllckxvZ2luUGFja2V0EiIKBnBsYXllchgB" + 
+          "IAIoCzISLlBsYXllckRlc2NyaXB0aW9uIl4KFFBsYXllck1vdmVtZW50UGFj" + 
+          "a2V0Eh4KC25ld1Bvc2l0aW9uGAEgAigLMgkuUG9zaXRpb24SJgoIbWFwU2xp" + 
+          "Y2UYAiACKAsyFC5NYXBTbGljZURlc2NyaXB0aW9uInIKE01hcFNsaWNlRGVz" + 
+          "Y3JpcHRpb24SDgoGc3RhcnRYGAEgAigFEgwKBGVuZFgYAiACKAUSDgoGc3Rh" + 
+          "cnRZGAMgAigFEgwKBGVuZFkYBCACKAUSHwoFdGlsZXMYBSADKAsyEC5UaWxl" + 
+          "RGVzY3JpcHRpb24iPQoXQ2hhcmFjdGVyTW92ZW1lbnRQYWNrZXQSIgoGcGxh" + 
+          "eWVyGAEgAigLMhIuUGxheWVyRGVzY3JpcHRpb24iQAoWQ3JlYXR1cmVNb3Zl" + 
+          "bWVudFBhY2tldBImCghjcmVhdHVyZRgBIAIoCzIULkNyZWF0dXJlRGVzY3Jp" + 
+          "cHRpb24iMwoITWVzc2FnZXMSJwoOTmV0d29ya21lc3NhZ2UYASADKAsyDy5O" + 
+          "ZXR3b3JrbWVzc2FnZSIoChJQbGF5ZXJMb2dvdXRQYWNrZXQSEgoKcGxheWVy" + 
+          "R3VpZBgBIAIoCQ==");
       pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
         descriptor = root;
         internal__static_Networkmessage__Descriptor = Descriptor.MessageTypes[0];
         internal__static_Networkmessage__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::Networkmessage, global::Networkmessage.Builder>(internal__static_Networkmessage__Descriptor,
-                new string[] { "Type", "LoginPacket", "CharactersPacket", "SelectCharacterPacket", "AreaDescriptionPacket", "RequestMovementPacket", "PlayerMovementPacket", "PlayerLoginPacket", "CharacterMovementPacket", "PlayerLogoutPacket", "CreatureRespawnPacket", });
+                new string[] { "Type", "LoginPacket", "CharactersPacket", "SelectCharacterPacket", "AreaDescriptionPacket", "RequestMovementPacket", "PlayerMovementPacket", "PlayerLoginPacket", "CharacterMovementPacket", "PlayerLogoutPacket", "CreatureRespawnPacket", "CreatureMovementPacket", });
         internal__static_LoginPacket__Descriptor = Descriptor.MessageTypes[1];
         internal__static_LoginPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::LoginPacket, global::LoginPacket.Builder>(internal__static_LoginPacket__Descriptor,
@@ -164,7 +170,7 @@ namespace Proto {
         internal__static_CreatureDescription__Descriptor = Descriptor.MessageTypes[10];
         internal__static_CreatureDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::CreatureDescription, global::CreatureDescription.Builder>(internal__static_CreatureDescription__Descriptor,
-                new string[] { "CreatureGuid", "TextId", "CreaturePosition", });
+                new string[] { "CreatureGuid", "TextId", "CreaturePosition", "Name", });
         internal__static_PlayerDescription__Descriptor = Descriptor.MessageTypes[11];
         internal__static_PlayerDescription__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::PlayerDescription, global::PlayerDescription.Builder>(internal__static_PlayerDescription__Descriptor,
@@ -193,11 +199,15 @@ namespace Proto {
         internal__static_CharacterMovementPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::CharacterMovementPacket, global::CharacterMovementPacket.Builder>(internal__static_CharacterMovementPacket__Descriptor,
                 new string[] { "Player", });
-        internal__static_Messages__Descriptor = Descriptor.MessageTypes[18];
+        internal__static_CreatureMovementPacket__Descriptor = Descriptor.MessageTypes[18];
+        internal__static_CreatureMovementPacket__FieldAccessorTable = 
+            new pb::FieldAccess.FieldAccessorTable<global::CreatureMovementPacket, global::CreatureMovementPacket.Builder>(internal__static_CreatureMovementPacket__Descriptor,
+                new string[] { "Creature", });
+        internal__static_Messages__Descriptor = Descriptor.MessageTypes[19];
         internal__static_Messages__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::Messages, global::Messages.Builder>(internal__static_Messages__Descriptor,
                 new string[] { "Networkmessage", });
-        internal__static_PlayerLogoutPacket__Descriptor = Descriptor.MessageTypes[19];
+        internal__static_PlayerLogoutPacket__Descriptor = Descriptor.MessageTypes[20];
         internal__static_PlayerLogoutPacket__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::PlayerLogoutPacket, global::PlayerLogoutPacket.Builder>(internal__static_PlayerLogoutPacket__Descriptor,
                 new string[] { "PlayerGuid", });
@@ -216,8 +226,8 @@ namespace Proto {
 public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage, Networkmessage.Builder> {
   private Networkmessage() { }
   private static readonly Networkmessage defaultInstance = new Networkmessage().MakeReadOnly();
-  private static readonly string[] _networkmessageFieldNames = new string[] { "areaDescriptionPacket", "characterMovementPacket", "charactersPacket", "creatureRespawnPacket", "loginPacket", "playerLoginPacket", "playerLogoutPacket", "playerMovementPacket", "requestMovementPacket", "selectCharacterPacket", "type" };
-  private static readonly uint[] _networkmessageFieldTags = new uint[] { 42, 74, 26, 90, 18, 66, 82, 58, 50, 34, 8 };
+  private static readonly string[] _networkmessageFieldNames = new string[] { "areaDescriptionPacket", "characterMovementPacket", "charactersPacket", "creatureMovementPacket", "creatureRespawnPacket", "loginPacket", "playerLoginPacket", "playerLogoutPacket", "playerMovementPacket", "requestMovementPacket", "selectCharacterPacket", "type" };
+  private static readonly uint[] _networkmessageFieldTags = new uint[] { 42, 74, 26, 98, 90, 18, 66, 82, 58, 50, 34, 8 };
   public static Networkmessage DefaultInstance {
     get { return defaultInstance; }
   }
@@ -253,6 +263,7 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
       PLAYER_LOGOUT = 8,
       CREATURE_RESPAWN = 9,
       NOT_POSSIBLE = 10,
+      CREATURE_MOVEMENT = 11,
     }
     
   }
@@ -368,6 +379,16 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
     get { return creatureRespawnPacket_ ?? global::CreatureRespawnPacket.DefaultInstance; }
   }
   
+  public const int CreatureMovementPacketFieldNumber = 12;
+  private bool hasCreatureMovementPacket;
+  private global::CreatureMovementPacket creatureMovementPacket_;
+  public bool HasCreatureMovementPacket {
+    get { return hasCreatureMovementPacket; }
+  }
+  public global::CreatureMovementPacket CreatureMovementPacket {
+    get { return creatureMovementPacket_ ?? global::CreatureMovementPacket.DefaultInstance; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasType) return false;
@@ -401,6 +422,9 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
       if (HasCreatureRespawnPacket) {
         if (!CreatureRespawnPacket.IsInitialized) return false;
       }
+      if (HasCreatureMovementPacket) {
+        if (!CreatureMovementPacket.IsInitialized) return false;
+      }
       return true;
     }
   }
@@ -409,37 +433,40 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
     int size = SerializedSize;
     string[] field_names = _networkmessageFieldNames;
     if (hasType) {
-      output.WriteEnum(1, field_names[10], (int) Type, Type);
+      output.WriteEnum(1, field_names[11], (int) Type, Type);
     }
     if (hasLoginPacket) {
-      output.WriteMessage(2, field_names[4], LoginPacket);
+      output.WriteMessage(2, field_names[5], LoginPacket);
     }
     if (hasCharactersPacket) {
       output.WriteMessage(3, field_names[2], CharactersPacket);
     }
     if (hasSelectCharacterPacket) {
-      output.WriteMessage(4, field_names[9], SelectCharacterPacket);
+      output.WriteMessage(4, field_names[10], SelectCharacterPacket);
     }
     if (hasAreaDescriptionPacket) {
       output.WriteMessage(5, field_names[0], AreaDescriptionPacket);
     }
     if (hasRequestMovementPacket) {
-      output.WriteMessage(6, field_names[8], RequestMovementPacket);
+      output.WriteMessage(6, field_names[9], RequestMovementPacket);
     }
     if (hasPlayerMovementPacket) {
-      output.WriteMessage(7, field_names[7], PlayerMovementPacket);
+      output.WriteMessage(7, field_names[8], PlayerMovementPacket);
     }
     if (hasPlayerLoginPacket) {
-      output.WriteMessage(8, field_names[5], PlayerLoginPacket);
+      output.WriteMessage(8, field_names[6], PlayerLoginPacket);
     }
     if (hasCharacterMovementPacket) {
       output.WriteMessage(9, field_names[1], CharacterMovementPacket);
     }
     if (hasPlayerLogoutPacket) {
-      output.WriteMessage(10, field_names[6], PlayerLogoutPacket);
+      output.WriteMessage(10, field_names[7], PlayerLogoutPacket);
     }
     if (hasCreatureRespawnPacket) {
-      output.WriteMessage(11, field_names[3], CreatureRespawnPacket);
+      output.WriteMessage(11, field_names[4], CreatureRespawnPacket);
+    }
+    if (hasCreatureMovementPacket) {
+      output.WriteMessage(12, field_names[3], CreatureMovementPacket);
     }
     UnknownFields.WriteTo(output);
   }
@@ -483,6 +510,9 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
       }
       if (hasCreatureRespawnPacket) {
         size += pb::CodedOutputStream.ComputeMessageSize(11, CreatureRespawnPacket);
+      }
+      if (hasCreatureMovementPacket) {
+        size += pb::CodedOutputStream.ComputeMessageSize(12, CreatureMovementPacket);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -641,6 +671,9 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
       if (other.HasCreatureRespawnPacket) {
         MergeCreatureRespawnPacket(other.CreatureRespawnPacket);
       }
+      if (other.HasCreatureMovementPacket) {
+        MergeCreatureMovementPacket(other.CreatureMovementPacket);
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -784,6 +817,15 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             CreatureRespawnPacket = subBuilder.BuildPartial();
+            break;
+          }
+          case 98: {
+            global::CreatureMovementPacket.Builder subBuilder = global::CreatureMovementPacket.CreateBuilder();
+            if (result.hasCreatureMovementPacket) {
+              subBuilder.MergeFrom(CreatureMovementPacket);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CreatureMovementPacket = subBuilder.BuildPartial();
             break;
           }
         }
@@ -1213,6 +1255,46 @@ public sealed partial class Networkmessage : pb::GeneratedMessage<Networkmessage
       PrepareBuilder();
       result.hasCreatureRespawnPacket = false;
       result.creatureRespawnPacket_ = null;
+      return this;
+    }
+    
+    public bool HasCreatureMovementPacket {
+     get { return result.hasCreatureMovementPacket; }
+    }
+    public global::CreatureMovementPacket CreatureMovementPacket {
+      get { return result.CreatureMovementPacket; }
+      set { SetCreatureMovementPacket(value); }
+    }
+    public Builder SetCreatureMovementPacket(global::CreatureMovementPacket value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCreatureMovementPacket = true;
+      result.creatureMovementPacket_ = value;
+      return this;
+    }
+    public Builder SetCreatureMovementPacket(global::CreatureMovementPacket.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCreatureMovementPacket = true;
+      result.creatureMovementPacket_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCreatureMovementPacket(global::CreatureMovementPacket value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCreatureMovementPacket &&
+          result.creatureMovementPacket_ != global::CreatureMovementPacket.DefaultInstance) {
+          result.creatureMovementPacket_ = global::CreatureMovementPacket.CreateBuilder(result.creatureMovementPacket_).MergeFrom(value).BuildPartial();
+      } else {
+        result.creatureMovementPacket_ = value;
+      }
+      result.hasCreatureMovementPacket = true;
+      return this;
+    }
+    public Builder ClearCreatureMovementPacket() {
+      PrepareBuilder();
+      result.hasCreatureMovementPacket = false;
+      result.creatureMovementPacket_ = null;
       return this;
     }
   }
@@ -4491,8 +4573,8 @@ public sealed partial class CreatureRespawnPacket : pb::GeneratedMessage<Creatur
 public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureDescription, CreatureDescription.Builder> {
   private CreatureDescription() { }
   private static readonly CreatureDescription defaultInstance = new CreatureDescription().MakeReadOnly();
-  private static readonly string[] _creatureDescriptionFieldNames = new string[] { "creatureGuid", "creaturePosition", "textId" };
-  private static readonly uint[] _creatureDescriptionFieldTags = new uint[] { 10, 26, 16 };
+  private static readonly string[] _creatureDescriptionFieldNames = new string[] { "creatureGuid", "creaturePosition", "name", "textId" };
+  private static readonly uint[] _creatureDescriptionFieldTags = new uint[] { 10, 26, 34, 16 };
   public static CreatureDescription DefaultInstance {
     get { return defaultInstance; }
   }
@@ -4543,11 +4625,22 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
     get { return creaturePosition_ ?? global::Position.DefaultInstance; }
   }
   
+  public const int NameFieldNumber = 4;
+  private bool hasName;
+  private string name_ = "";
+  public bool HasName {
+    get { return hasName; }
+  }
+  public string Name {
+    get { return name_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCreatureGuid) return false;
       if (!hasTextId) return false;
       if (!hasCreaturePosition) return false;
+      if (!hasName) return false;
       if (!CreaturePosition.IsInitialized) return false;
       return true;
     }
@@ -4560,10 +4653,13 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       output.WriteString(1, field_names[0], CreatureGuid);
     }
     if (hasTextId) {
-      output.WriteInt32(2, field_names[2], TextId);
+      output.WriteInt32(2, field_names[3], TextId);
     }
     if (hasCreaturePosition) {
       output.WriteMessage(3, field_names[1], CreaturePosition);
+    }
+    if (hasName) {
+      output.WriteString(4, field_names[2], Name);
     }
     UnknownFields.WriteTo(output);
   }
@@ -4583,6 +4679,9 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       }
       if (hasCreaturePosition) {
         size += pb::CodedOutputStream.ComputeMessageSize(3, CreaturePosition);
+      }
+      if (hasName) {
+        size += pb::CodedOutputStream.ComputeStringSize(4, Name);
       }
       size += UnknownFields.SerializedSize;
       memoizedSerializedSize = size;
@@ -4717,6 +4816,9 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       if (other.HasCreaturePosition) {
         MergeCreaturePosition(other.CreaturePosition);
       }
+      if (other.HasName) {
+        Name = other.Name;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -4775,6 +4877,10 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             CreaturePosition = subBuilder.BuildPartial();
+            break;
+          }
+          case 34: {
+            result.hasName = input.ReadString(ref result.name_);
             break;
           }
         }
@@ -4865,6 +4971,27 @@ public sealed partial class CreatureDescription : pb::GeneratedMessage<CreatureD
       PrepareBuilder();
       result.hasCreaturePosition = false;
       result.creaturePosition_ = null;
+      return this;
+    }
+    
+    public bool HasName {
+      get { return result.hasName; }
+    }
+    public string Name {
+      get { return result.Name; }
+      set { SetName(value); }
+    }
+    public Builder SetName(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasName = true;
+      result.name_ = value;
+      return this;
+    }
+    public Builder ClearName() {
+      PrepareBuilder();
+      result.hasName = false;
+      result.name_ = "";
       return this;
     }
   }
@@ -7720,6 +7847,303 @@ public sealed partial class CharacterMovementPacket : pb::GeneratedMessage<Chara
     }
   }
   static CharacterMovementPacket() {
+    object.ReferenceEquals(global::Proto.Networkmessage.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class CreatureMovementPacket : pb::GeneratedMessage<CreatureMovementPacket, CreatureMovementPacket.Builder> {
+  private CreatureMovementPacket() { }
+  private static readonly CreatureMovementPacket defaultInstance = new CreatureMovementPacket().MakeReadOnly();
+  private static readonly string[] _creatureMovementPacketFieldNames = new string[] { "creature" };
+  private static readonly uint[] _creatureMovementPacketFieldTags = new uint[] { 10 };
+  public static CreatureMovementPacket DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override CreatureMovementPacket DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override CreatureMovementPacket ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::Proto.Networkmessage.internal__static_CreatureMovementPacket__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<CreatureMovementPacket, CreatureMovementPacket.Builder> InternalFieldAccessors {
+    get { return global::Proto.Networkmessage.internal__static_CreatureMovementPacket__FieldAccessorTable; }
+  }
+  
+  public const int CreatureFieldNumber = 1;
+  private bool hasCreature;
+  private global::CreatureDescription creature_;
+  public bool HasCreature {
+    get { return hasCreature; }
+  }
+  public global::CreatureDescription Creature {
+    get { return creature_ ?? global::CreatureDescription.DefaultInstance; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasCreature) return false;
+      if (!Creature.IsInitialized) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    int size = SerializedSize;
+    string[] field_names = _creatureMovementPacketFieldNames;
+    if (hasCreature) {
+      output.WriteMessage(1, field_names[0], Creature);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      
+      size = 0;
+      if (hasCreature) {
+        size += pb::CodedOutputStream.ComputeMessageSize(1, Creature);
+      }
+      size += UnknownFields.SerializedSize;
+      memoizedSerializedSize = size;
+      return size;
+    }
+  }
+  
+  public static CreatureMovementPacket ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CreatureMovementPacket ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CreatureMovementPacket MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CreatureMovementPacket prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CreatureMovementPacket, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CreatureMovementPacket cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CreatureMovementPacket result;
+    
+    private CreatureMovementPacket PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CreatureMovementPacket original = result;
+        result = new CreatureMovementPacket();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CreatureMovementPacket MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CreatureMovementPacket.Descriptor; }
+    }
+    
+    public override CreatureMovementPacket DefaultInstanceForType {
+      get { return global::CreatureMovementPacket.DefaultInstance; }
+    }
+    
+    public override CreatureMovementPacket BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CreatureMovementPacket) {
+        return MergeFrom((CreatureMovementPacket) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CreatureMovementPacket other) {
+      if (other == global::CreatureMovementPacket.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasCreature) {
+        MergeCreature(other.Creature);
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_creatureMovementPacketFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _creatureMovementPacketFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            global::CreatureDescription.Builder subBuilder = global::CreatureDescription.CreateBuilder();
+            if (result.hasCreature) {
+              subBuilder.MergeFrom(Creature);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            Creature = subBuilder.BuildPartial();
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasCreature {
+     get { return result.hasCreature; }
+    }
+    public global::CreatureDescription Creature {
+      get { return result.Creature; }
+      set { SetCreature(value); }
+    }
+    public Builder SetCreature(global::CreatureDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCreature = true;
+      result.creature_ = value;
+      return this;
+    }
+    public Builder SetCreature(global::CreatureDescription.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCreature = true;
+      result.creature_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCreature(global::CreatureDescription value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCreature &&
+          result.creature_ != global::CreatureDescription.DefaultInstance) {
+          result.creature_ = global::CreatureDescription.CreateBuilder(result.creature_).MergeFrom(value).BuildPartial();
+      } else {
+        result.creature_ = value;
+      }
+      result.hasCreature = true;
+      return this;
+    }
+    public Builder ClearCreature() {
+      PrepareBuilder();
+      result.hasCreature = false;
+      result.creature_ = null;
+      return this;
+    }
+  }
+  static CreatureMovementPacket() {
     object.ReferenceEquals(global::Proto.Networkmessage.Descriptor, null);
   }
 }

@@ -75,8 +75,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\Creatures\AI\SimpleAI.cs" />
+    <Compile Include="Content\Creatures\PathFinding\IHasNeighbours.cs" />
+    <Compile Include="Content\Creatures\PathFinding\Path.cs" />
+    <Compile Include="Content\Creatures\PathFinding\PathFinder.cs" />
+    <Compile Include="Content\Creatures\PathFinding\PriorityQueue.cs" />
     <Compile Include="Content\Game.cs" />
     <Compile Include="Content\Scripting\ScriptManager.cs" />
+    <Compile Include="Content\Utils\Enums.cs" />
     <Compile Include="Content\World\Area.cs" />
     <Compile Include="Content\Creatures\Creature.cs" />
     <Compile Include="Content\Creatures\Player.cs" />

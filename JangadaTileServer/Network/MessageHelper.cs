@@ -72,6 +72,14 @@ namespace JangadaTileServer.Network
                 }
             }
 
+            foreach (Creature creature in area.CreaturesInViewArea(client.Player.Position))
+            {
+                if (creature.CreatureGuid != client.Player.CreatureGuid)
+                {
+                    areaDesc.AddCreatures(GenCreatureDesc(creature));
+                }
+            }
+
             return areaDesc.Build();
         }
 
@@ -193,14 +201,26 @@ namespace JangadaTileServer.Network
         }
 
 
-        internal static void SendCreatureMove(JWebClient client, Player player)
+        internal static void SendCharacterMove(JWebClient client, Player player)
         {
             CharacterMovementPacket charMovement = CharacterMovementPacket.CreateBuilder()
                 .SetPlayer(GenPlayerDesc(player)).Build();
 
             Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
             newMessage.CharacterMovementPacket = charMovement;
-            newMessage.Type = Networkmessage.Types.Type.CHARACTER_MOVEMENT;;
+            newMessage.Type = Networkmessage.Types.Type.CHARACTER_MOVEMENT; ;
+            Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
+            Send(messagesToSend, client);
+        }
+
+        internal static void SendCreatureMove(JWebClient client, Creature creature)
+        {
+            CreatureMovementPacket creatureMovement = CreatureMovementPacket.CreateBuilder()
+                .SetCreature(GenCreatureDesc(creature)).Build();
+
+            Networkmessage.Builder newMessage = Networkmessage.CreateBuilder();
+            newMessage.CreatureMovementPacket = creatureMovement;
+            newMessage.Type = Networkmessage.Types.Type.CREATURE_MOVEMENT;
             Messages messagesToSend = Messages.CreateBuilder().AddNetworkmessage(newMessage.Build()).Build();
             Send(messagesToSend, client);
         }
@@ -218,10 +238,11 @@ namespace JangadaTileServer.Network
         {
             return CreatureDescription.CreateBuilder()
                 .SetCreatureGuid(creature.CreatureGuid.ToString("N"))
+                .SetName(creature.Name)
                 .SetCreaturePosition(Position.CreateBuilder()
                 .SetX(creature.Position.X)
                 .SetY(creature.Position.Y)
-                .SetZ(creature.Position.Z)
+                .SetZ(creature.Position.Z)                
                 .Build())
                 .SetTextId(creature.CreatureId)
                 .Build();

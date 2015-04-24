@@ -23,5 +23,56 @@ namespace JangadaTileServer.Content.Utils
         public int X { get; set; }
         public int Y { get; set; }
         public int Z { get; set; }
+
+        public static double Distance(Position p1, Position p2)
+        {
+            return Math.Sqrt((p2.X - p1.X) * (p2.X - p1.X) + (p2.Y - p1.Y) * (p2.Y - p1.Y));
+        }
+
+        public static JangadaTileServer.Content.Utils.Enums.Direction GetDirectionPosition(Position p1, Position p2)
+        {
+            if (p1.X > p2.X)
+            {
+                if (p1.Y > p2.Y)
+                {
+                    return Enums.Direction.NORTH_WEST;
+                }
+                else if (p1.Y < p2.Y)
+                {
+                    return Enums.Direction.SOUTH_WEST;
+                }
+                else
+                {
+                    return Enums.Direction.WEST;
+                }
+            }
+            else if (p1.X < p2.X)
+            {
+                if (p1.Y > p2.Y)
+                {
+                    return Enums.Direction.NORTH_EAST;
+                }
+                else if (p1.Y < p2.Y)
+                {
+                    return Enums.Direction.SOUTH_EAST;
+                }
+                else
+                {
+                    return Enums.Direction.EAST;
+                }
+            }
+            else
+            {
+                if (p1.Y > p2.Y)
+                {
+                    return Enums.Direction.NORTH;
+                }
+                else if (p1.Y < p2.Y)
+                {
+                    return Enums.Direction.SOUTH;
+                }
+            }
+            return Enums.Direction.NONE;
+        }
     }
 }

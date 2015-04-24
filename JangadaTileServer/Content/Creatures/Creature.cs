@@ -1,4 +1,5 @@
-﻿using JangadaTileServer.Content.Scripting;
+﻿using JangadaTileServer.Content.Creatures.AI;
+using JangadaTileServer.Content.Scripting;
 using JangadaTileServer.Content.Utils;
 using JangadaTileServer.Content.World;
 using JangadaTileServer.Network;
@@ -24,6 +25,12 @@ namespace JangadaTileServer.Content.Creatures
         public int Mana { get; set; }
         public List<Skills> Skills { get; set; }
         public RequestMovementPacket.Types.MovementType LastMoveType { get; set; }
+        public Creature Target { get; set; }
+        public Task AttackTask { get; set; }
+        public CancellationTokenSource AttackCancellationToken { get; set; }
+        public SimpleAI AI { get; set; }
+        public Task AITask { get; set; }
+
 
         public int Speed
         {
@@ -39,7 +46,7 @@ namespace JangadaTileServer.Content.Creatures
             this.CreatureGuid = Util.GenGuid();
             this.Skills = new List<Skills>();
             this.Stats = new Stats();
-            this.Name = "Keto";
+            this.Name = "Keto";            
         }
 
         public Creature(int creatureId, Utils.Position position)
@@ -50,6 +57,18 @@ namespace JangadaTileServer.Content.Creatures
             this.Stats = new Stats();
             this.Name = "Keto";
             this.Position = position;
+            if (!(this is Player))
+            {
+                this.AI = new SimpleAI(this);
+                this.AITask = Task.Factory.StartNew(() =>
+                {
+                    while (true)
+                    { 
+                    Thread.Sleep(2000);
+                    this.AI.Run();
+                        }
+                });
+            }
         }
 
         public bool IsVisible(Utils.Position position)
@@ -57,6 +76,35 @@ namespace JangadaTileServer.Content.Creatures
             return (position.X >= this.Position.X - 19 && position.X <= this.Position.X + 19 &&
                 position.Y >= this.Position.Y - 13 && position.Y <= this.Position.Y + 13 &&
                 position.Z == this.Position.Z);
+        }
+
+        public void Attack(Creature target)
+        {
+            Console.WriteLine("Attack command!");
+            if (this.AttackTask != null && this.AttackTask.Status == TaskStatus.Running)
+            {
+                Console.WriteLine("Task != null && Status == Running");
+                this.AttackCancellationToken.Cancel();
+            }
+            this.AttackCancellationToken = new CancellationTokenSource();
+            CancellationToken ct = this.AttackCancellationToken.Token;
+            this.Target = target;
+            int atkSpeed = 2000;
+            this.AttackTask = Task.Factory.StartNew(() =>
+            {
+                AttackMethod(atkSpeed);
+            }, ct);
+        }
+
+        public void AttackMethod(int atkSpeed)
+        {
+            Console.WriteLine("Started Attack Task!");
+            Thread.Sleep(atkSpeed);
+            if (this.Target == null)
+            {
+                this.AttackCancellationToken.Cancel();
+                Console.WriteLine("Cancelled Attack Task");
+            }
         }
 
         public void Walk(RequestMovementPacket.Types.MovementType movementType)
@@ -91,15 +139,22 @@ namespace JangadaTileServer.Content.Creatures
                 newPos.Y = 0;
             }
 
-            if (this.Area.CreatureInPos(newPos) && this is Player)
+            if (this.Area.CreatureInPos(newPos))
             {
-                MessageHelper.SendNotPossible((Player)this);
+                if (this is Player)
+                {
+                    MessageHelper.SendNotPossible((Player)this);
+                }
+                else
+                {
+                    this.Walk(RequestMovementPacket.Types.MovementType.DOWN);
+                }
                 return;
             }
             this.Position = newPos;
             Game.GetInstance().CreatureMoved(this);
 
-            int interval = 5000;
+            //int interval = 5000;
             //Task.Factory.StartNew(() =>
             //{
                 //Thread.Sleep(interval);

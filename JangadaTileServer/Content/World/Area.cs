@@ -79,7 +79,7 @@ namespace JangadaTileServer.Content.World
         {
             foreach (Creature creature in Creatures)
             {
-                if (creature.Position.X == pos.X && creature.Position.Y <= pos.Y)
+                if (creature.Position.X == pos.X && creature.Position.Y == pos.Y)
                 {
                     return true;
                 }
@@ -94,6 +94,22 @@ namespace JangadaTileServer.Content.World
             }
 
             return false;
+        }
+
+        internal List<Creature> CreaturesInViewArea(Utils.Position position)
+        {
+            List<Creature> creatures = new List<Creature>();
+
+            foreach (Creature creature in Creatures)
+            {
+                if (creature.IsVisible(position))
+                {
+                    creatures.Add(creature);
+                }
+            }
+
+
+            return creatures;
         }
     }
 }

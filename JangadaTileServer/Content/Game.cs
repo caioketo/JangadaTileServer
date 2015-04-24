@@ -82,7 +82,17 @@ namespace JangadaTileServer.Content
                 {
                     if (player.CreatureGuid != creature.CreatureGuid)
                     {
-                        MessageHelper.SendCreatureMove(player.Client, (Player)creature);
+                        MessageHelper.SendCharacterMove(player.Client, (Player)creature);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Player player in creature.Area.PlayersInViewArea(creature.Position))
+                {
+                    if (player.CreatureGuid != creature.CreatureGuid)
+                    {
+                        MessageHelper.SendCreatureMove(player.Client, creature);
                     }
                 }
             }
